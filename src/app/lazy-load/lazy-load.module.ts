@@ -4,7 +4,7 @@ import { Routes,RouterModule } from '@angular/router';
  
 import { AuthModule } from '../auth/auth.module';
 
-const routes: Routes = [   
+const routes: Routes = [
     {path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
     {path: 'register', loadChildren: '../register/register.module#RegisterModule'},
     {path: 'login', loadChildren: '../pages/login/login.module#LoginModule'},

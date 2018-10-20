@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth.component';
 import { DashboardCrmComponent } from '../dashboard-crm/dashboard-crm.component';
+import {RegisterComponent} from '../pages/register/register.component';
 
 export const appRoutes: Routes = [{
     path: '', component: AuthComponent, children: [
@@ -16,5 +17,7 @@ export const appRoutes: Routes = [{
         { path: 'guarded-routes', loadChildren: '../guarded-routes/guarded-routes.module#GuardedRoutesModule' },
         // { path: 'editor', loadChildren: '../editor/editor.module#EditorModule' }, 
         { path: 'scrumboard', loadChildren: '../scrumboard/scrumboard.module#ScrumboardModule' },
+        { path: 'register', loadChildren: '../pages/register/register.module#RegisterModule' },
+        //RegisterComponent
     ]
 }];

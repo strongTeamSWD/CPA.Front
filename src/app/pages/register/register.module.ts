@@ -11,10 +11,12 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import {ScrumboardComponent} from '../../scrumboard/scrumboard.component';
 
-// const routes: Routes = [
-//     {path: '', component: RegisterComponent},
-// ];
+export const routes: Routes = [
+    {path: '', component: RegisterComponent},
+];
+
 
 @NgModule({
     imports: [
@@ -27,7 +29,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
         MatToolbarModule,
         FormsModule,
         ReactiveFormsModule,
-        // RouterModule.forChild(routes)
+        RouterModule.forChild(routes)
     ],
     declarations: [
         RegisterComponent

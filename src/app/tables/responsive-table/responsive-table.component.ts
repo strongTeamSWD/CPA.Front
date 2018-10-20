@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material';
 })
 export class ResponsiveTableComponent implements OnInit {
 
-  	displayedColumns = ['userId', 'userName', 'progress', 'color'];
+  	displayedColumns = ['id', 'name', 'description', 'type', 'action'];
 	rows: Array<any> = [];
     showResponsiveTableCode;
 

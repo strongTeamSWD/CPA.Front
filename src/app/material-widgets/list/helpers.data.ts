@@ -1,26 +1,11 @@
 export const LIST_HELPERS: any = {
 
 	tsSourceSelectionList:`
-		import { MatListModule } from '@angular/material';
-		@NgModule({
-		  imports: [
-		   MatListModule
-		})
-		export class AppModule { }
-		
-		import { Component, OnInit } from '@angular/core';
-		@Component({
-			  selector: 'cdk-list',
-			  templateUrl: './list.component.html',
-			  styleUrls: ['./list.component.scss']
-		})
-		export class ListComponent implements OnInit {
-
-			  constructor() { }
-
-			  ngOnInit() {
-			  }
-		 }
+	<div class="description">
+		<p><b>CPA System</b> is a global pay per action company that focuses on growing revenue for advertisers and publishers. Our technology exceeds industry standards.</p>
+		<p>CPA System creates a marketplace for optimal delivery of quality offers and traffic by partnering with valuable advertisers and top performing publishers.</p>
+		<p>Here at CPA System  — we Pay Attention to You and Your business needs.</p>
+	</div>
 	`.trim(),
 
 

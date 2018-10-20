@@ -9,7 +9,7 @@ const pagesRoutes: Routes = [
   	{ path: 'contact', component: ContactComponent ,data: { animation: 'contact' } },
   	{ path: 'about', component: AboutComponent ,data: { animation: 'about' }},
   	{ path: 'services', component: ServicesComponent ,data: { animation: 'services' }},
-  	{ path: 'services', component: RegisterComponent ,data: { animation: 'register' }},
+  	{ path: 'register', component: RegisterComponent ,data: { animation: 'register' }},
 ];
 
 @NgModule({
