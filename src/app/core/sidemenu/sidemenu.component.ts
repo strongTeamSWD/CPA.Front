@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { menus } from './menu-element';
+import { menus } from './menu-element';//'./logout-menu-element'
 
 @Component({
   selector: 'cdk-sidemenu',

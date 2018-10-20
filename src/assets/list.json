@@ -17,7 +17,7 @@
     ],
     "group": "promotions",
     "type": "sent",
-    "attachments": ["assets/user-image.jpg"]
+    "attachments": ["assets/noavatar.png"]
   },
   {
     "from": {

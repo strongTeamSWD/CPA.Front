@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login.component';
-import {
-        MatCardModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatInputModule,
-        MatToolbarModule
-       } from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { RegisterComponent } from './register.component';
+import {
+    MatCardModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatInputModule,
+    MatToolbarModule
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
-const routes: Routes = [
-    {path: '', component: LoginComponent},
-  ];
+// const routes: Routes = [
+//     {path: '', component: RegisterComponent},
+// ];
+
 @NgModule({
     imports: [
         MatCardModule,
@@ -26,10 +27,10 @@ const routes: Routes = [
         MatToolbarModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule.forChild(routes)
+        // RouterModule.forChild(routes)
     ],
-    declarations: [   
-        LoginComponent,
+    declarations: [
+        RegisterComponent
     ],
     exports: [
         RouterModule
@@ -37,5 +38,5 @@ const routes: Routes = [
     providers: [
     ]
 })
-export class LoginModule {
-}
+export class RegisterModule { }
+

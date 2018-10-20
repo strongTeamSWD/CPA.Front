@@ -51,7 +51,7 @@ export const menus = [
             },
             {
                 'name': 'Log out',
-                'link': 'material-widgets/icons',
+                'link': '',
                 'icon': 'gif',
                 'chip': false,
                 'open': false,
@@ -61,22 +61,22 @@ export const menus = [
     {
         'name': 'Summary',
         'icon': 'mode_edit',
-        'link': '/auth/guarded-routes',
+        'link': '/auth/scrumboard',
         'open': false,
     }, {
         'name': 'Sources',
         'open': false,
-        'link': '/auth/scrumboard',
+        'link': '/auth/guarded-routes',
         'icon': 'grade',
     }, {
-        'name': 'My Offers',
+        'name': 'My Offers/register',
         'open': false,
-        'link': '/auth/scrumboard',
+        'link': '/register',
         'icon': 'grade',
     }, {
         'name': 'Tools',
         'open': false,
-        'link': '/auth/scrumboard',
+        'link': '/login',
         'icon': 'grade',
     }, {
         'name': 'Promotion',
@@ -84,9 +84,9 @@ export const menus = [
         'link': '/auth/scrumboard',
         'icon': 'grade',
     }, {
-        'name': 'Statistics',
+        'name': 'Statistics/icons',
         'open': false,
-        'link': '/auth/scrumboard',
+        'link': 'material-widgets/icons',
         'icon': 'grade',
     }, {
         'name': 'Referral',
