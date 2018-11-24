@@ -6,16 +6,16 @@ import { ServicesComponent } from './services/services.component';
 import {RegisterComponent} from './register/register.component';
 
 const pagesRoutes: Routes = [
-  	{ path: 'contact', component: ContactComponent ,data: { animation: 'contact' } },
-  	{ path: 'about', component: AboutComponent ,data: { animation: 'about' }},
-  	{ path: 'services', component: ServicesComponent ,data: { animation: 'services' }},
-  	{ path: 'register', component: RegisterComponent ,data: { animation: 'register' }},
+    { path: 'contact', component: ContactComponent , data: { animation: 'contact' } },
+    { path: 'about', component: AboutComponent , data: { animation: 'about' }},
+    { path: 'services', component: ServicesComponent , data: { animation: 'services' }},
+    { path: 'register', component: RegisterComponent , data: { animation: 'register' }},
 ];
 
 @NgModule({
   imports: [
     RouterModule.forChild(pagesRoutes)
-  	],
+  ],
   exports: [
     RouterModule
   ]
