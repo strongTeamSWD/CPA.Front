@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../services/authService';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,6 +23,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 import { DashboardCrmModule } from '../dashboard-crm/dashboard-crm.module';
 
 import { CoreModule } from '../core/core.module';
+import {HttpService} from '../services/HttpService';
 
 
 @NgModule({
@@ -36,13 +38,16 @@ import { CoreModule } from '../core/core.module';
         CoreModule,
         MatSidenavModule,
         PerfectScrollbarModule,
+
     ],
     declarations: [AuthComponent],
     providers: [
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        }
+        },
+        HttpService,
+        AuthService,
     ]
-})
+    })
 export class AuthModule { }

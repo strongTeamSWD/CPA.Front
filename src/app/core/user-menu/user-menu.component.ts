@@ -32,4 +32,7 @@ export class UserMenuComponent implements OnInit {
   	ngOnInit() {
   	}
 
+    logout() {
+
+    }
 }
