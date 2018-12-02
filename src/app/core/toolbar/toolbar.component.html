@@ -7,6 +7,18 @@
         <i class="material-icons app-toolbar-menu">menu </i>
     </button>
 
+    <!--<button  mat-icon-button (click)="searchOpen = !searchOpen" fxHide="true" [fxHide.gt-xs]="false">-->
+        <!--<i class="material-icons">list</i>-->
+    <!--</button>-->
+    <!--<cdk-search-bar [open]="searchOpen"></cdk-search-bar>-->
+
+
+    <!--'name': 'ABOUT US',-->
+    <!--'link': 'material-widgets/list',-->
+    <!--'icon': 'list',-->
+    <!--'chip': false,-->
+    <!--'open': false,-->
+
     <span class="spacer"></span>
 
     <button  mat-icon-button (click)="searchOpen = !searchOpen" fxHide="true" [fxHide.gt-xs]="false">
@@ -18,7 +30,13 @@
 
     <cdk-toolbar-notification [notifications]="toolbarHelpers?.notifications"></cdk-toolbar-notification>
 
-    <cdk-user-menu [currentUser]="toolbarHelpers?.currentUser"></cdk-user-menu>
+    <!--<button  mat-icon-button  *ngIf="!toolbarHelpers?.currentUser?.currentUserName" (click)="signIn = !signIn" fxHide="true" [fxHide.gt-xs]="false">-->
+        <!--&lt;!&ndash;<i class="material-icons">search</i>&ndash;&gt;-->
+        <!--<p>sign in</p>-->
+    <!--</button>-->
+    <!--<app-register [open]="signIn"></app-register>-->
+
+    <cdk-user-menu [currentUser]="toolbarHelpers?.currentUser" *ngIf="toolbarHelpers?.currentUser?.currentUserName"></cdk-user-menu>
     
      <button mat-icon-button (click)="sidebar.toggle();">
         <i class="material-icons app-toolbar-menu">menu </i>

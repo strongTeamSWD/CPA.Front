@@ -9,6 +9,8 @@ import {
         MatCheckboxModule,
         MatListModule,
        } from '@angular/material';
+
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -26,6 +28,7 @@ import { CoreModule } from '../core/core.module';
         MatButtonModule,
         MatButtonToggleModule,
         MatInputModule,
+        MatTabsModule,
         MatToolbarModule,
         MatIconModule,
         MatCheckboxModule,

@@ -22,6 +22,6 @@ export const ToolbarHelpers = {
 
 	currentUser: {
 		photoURL: 'assets/images/avatars/noavatar.png',
-		currentUserName: 'User User'
+		currentUserName: null
 	}
 };

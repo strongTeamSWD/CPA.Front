@@ -14,6 +14,7 @@ export class ToolbarComponent implements OnInit {
 	@Input() matDrawerShow;
   
 	searchOpen: boolean = false;
+	signIn: boolean = false;
     toolbarHelpers = ToolbarHelpers;
   	constructor() { }
 
