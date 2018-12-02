@@ -1,0 +1,46 @@
+<p>
+  user-register works!
+</p>
+<div class="component-preview">
+  <mat-card-content>
+    <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="userForm"
+          (ngSubmit)="login()">
+      <!--<mat-form-field class="full-width">-->
+        <!--<input type="email" id="email" class="input"-->
+               <!--placeholder="Please enter your email"-->
+               <!--formControlName="email" required matInput>-->
+      <!--</mat-form-field>-->
+      <!--<div *ngIf="formErrors.email" class="help is-danger">-->
+        <!--{{ formErrors.email }}-->
+      <!--</div>-->
+      <!--<mat-form-field class="full-width">-->
+        <!--<input type="password" id="password" class="input"-->
+               <!--placeholder="please  enter your password"-->
+               <!--formControlName="password" required matInput>-->
+      <!--</mat-form-field>-->
+      <!--<div *ngIf="formErrors.password" class="help is-danger">-->
+        <!--{{ formErrors.password }}-->
+      <!--</div>-->
+
+      <mat-form-field class="full-width">
+      <input type="email" id="email" class="input"
+      placeholder="Email"
+      formControlName="email" required matInput>
+        <mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field class="full-width">
+      <input type="password" id="password" class="input"
+      placeholder="Password"
+      formControlName="password" required matInput>
+        <mat-error *ngIf="formErrors.password">{{ formErrors.password }}</mat-error>
+      </mat-form-field><br>
+     <!--class="help is-danger"-->
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid"
+              (click)="login()">log in
+      </button>
+
+    </form>
+  </mat-card-content>
+</div>
