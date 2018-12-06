@@ -51,7 +51,7 @@ export const menus = [
             },
             {
                 'name': 'Log in',
-                'link': '../login',
+                'link': '../register',
                 'icon': 'gif',
                 'chip': false,
                 'open': false,

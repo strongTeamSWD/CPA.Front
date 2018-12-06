@@ -4,43 +4,74 @@
 <div class="component-preview">
   <mat-card-content>
     <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="userForm"
-          (ngSubmit)="login()">
-      <!--<mat-form-field class="full-width">-->
-        <!--<input type="email" id="email" class="input"-->
-               <!--placeholder="Please enter your email"-->
-               <!--formControlName="email" required matInput>-->
-      <!--</mat-form-field>-->
-      <!--<div *ngIf="formErrors.email" class="help is-danger">-->
-        <!--{{ formErrors.email }}-->
-      <!--</div>-->
-      <!--<mat-form-field class="full-width">-->
-        <!--<input type="password" id="password" class="input"-->
-               <!--placeholder="please  enter your password"-->
-               <!--formControlName="password" required matInput>-->
-      <!--</mat-form-field>-->
-      <!--<div *ngIf="formErrors.password" class="help is-danger">-->
-        <!--{{ formErrors.password }}-->
-      <!--</div>-->
+          (ngSubmit)="register()">
 
       <mat-form-field class="full-width">
-      <input type="email" id="email" class="input"
-      placeholder="Email"
-      formControlName="email" required matInput>
+        <input type="text" id="name" class="input"
+               placeholder="Name"
+               formControlName="name" required matInput>
+        <mat-error *ngIf="formErrors.name">{{ formErrors.name }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="text" id="surname" class="input"
+               placeholder="Surname"
+               formControlName="surname" required matInput>
+        <mat-error *ngIf="formErrors.surname">{{ formErrors.surname }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="text" id="company" class="input"
+               placeholder="Company"
+               formControlName="company" required matInput>
+        <mat-error *ngIf="formErrors.company">{{ formErrors.company }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="text" id="site" class="input"
+               placeholder="Site"
+               formControlName="site" required matInput>
+        <mat-error *ngIf="formErrors.site">{{ formErrors.site }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="text" id="phone" class="input"
+               placeholder="Phone"
+               formControlName="phone" required matInput>
+        <mat-error *ngIf="formErrors.phone">{{ formErrors.phone }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="text" id="country" class="input"
+               placeholder="Country"
+               formControlName="country" required matInput>
+        <mat-error *ngIf="formErrors.country">{{ formErrors.country }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="email" id="email" class="input"
+               placeholder="Email"
+               formControlName="email" required matInput>
         <mat-error *ngIf="formErrors.email">{{ formErrors.email }}</mat-error>
-      </mat-form-field><br>
+      </mat-form-field>
 
       <mat-form-field class="full-width">
-      <input type="password" id="password" class="input"
-      placeholder="Password"
-      formControlName="password" required matInput>
+        <input type="password" id="password" class="input"
+               placeholder="Password"
+               formControlName="password" required matInput>
         <mat-error *ngIf="formErrors.password">{{ formErrors.password }}</mat-error>
-      </mat-form-field><br>
-     <!--class="help is-danger"-->
+      </mat-form-field>
+      <!--class="help is-danger"-->
+      <mat-form-field class="full-width">
+        <input type="password" id="password2" class="input"
+               placeholder="please  enter your password confirmation"
+               formControlName="password2" required matInput>
+        <mat-error *ngIf="formErrors.password2">{{ formErrors.password2 }}</mat-error>
+      </mat-form-field>
 
       <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid"
-              (click)="login()">log in
+              (click)="register()">log in
       </button>
-
     </form>
   </mat-card-content>
 </div>

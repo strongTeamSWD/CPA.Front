@@ -8,9 +8,9 @@ background-size: cover; ">
         <div class=" mat-elevation-z4">
             <mat-card>
                 <mat-card-title>Register as!
-                    <a class="redirect" [routerLink]="['/sigup']">Register an account</a>
+                    <a class="redirect" [routerLink]="['register']">Register an account</a>
                 </mat-card-title>
-                <mat-tab-group fxFlexFill>
+                <mat-tab-group fxFlexFill  [selectedIndex]="selected.value"  (selectedIndexChange)="selected.setValue($event)">
                     <mat-tab label="PUBLISHER">
                         <app-user-register></app-user-register>
                     </mat-tab>

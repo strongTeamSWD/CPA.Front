@@ -61,7 +61,7 @@ export const menus = [
             },
             {
                 'name': 'Log in',
-                'link': '../login',
+                'link': '../register',
                 'icon': 'gif',
                 'chip': false,
                 'open': false,
@@ -188,7 +188,7 @@ export const menus = [
     //             'name': 'Login',
     //             'icon': 'work',
     //             'open': false,
-    //             'link': '../login',
+    //             'link': '../register',
     //         }, {
     //             'name': 'Services',
     //             'icon': 'local_laundry_service',
