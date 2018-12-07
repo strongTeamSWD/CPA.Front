@@ -5,20 +5,22 @@ export const menus = [
         'link': false,
         'open': false,
         'sub': [
-            {
-                'name': 'ACCOUNT',
-                'link': '',
-                // material-widgets/buttons
-                'icon': 'indeterminate_check_box',
-                'chip': false,
-                'open': false,
-            },
+            // {
+            //     'name': 'ACCOUNT',
+            //     'link': '',
+            //     // material-widgets/buttons
+            //     'icon': 'indeterminate_check_box',
+            //     'chip': false,
+            //     'open': false,
+            //     'auth': true
+            // },
             {
                 'name': 'ABOUT US',
                 'link': 'material-widgets/list',
                 'icon': 'list',
                 'chip': false,
                 'open': false,
+                'auth': false
             },
             // {
             //
@@ -43,48 +45,55 @@ export const menus = [
                 'icon': 'cached',
                 'chip': false,
                 'open': false,
+                'auth': false
             },
-            {
-                'name': 'OFFERS',
-                'link': '',
-                // material-widgets/cards
-                'icon': 'crop_16_9',
-                'chip': false,
-                'open': false,
-            },
-            {
-                'name': 'Log out',
-                'link': '',
-                'icon': 'gif',
-                'chip': false,
-                'open': false,
-            },
-            {
-                'name': 'Log in',
-                'link': '../register',
-                'icon': 'gif',
-                'chip': false,
-                'open': false,
-            },
-            {
-                'name': 'Register',
-                'link': 'register',
-                'icon': 'gif',
-                'chip': false,
-                'open': false,
-            }
+            // {
+            //     'name': 'OFFERS',
+            //     'link': '',
+            //     // material-widgets/cards
+            //     'icon': 'crop_16_9',
+            //     'chip': false,
+            //     'open': false,
+            //     'auth': true
+            // },
         ]
+    },
+    {
+        'name': 'Log out',
+        'link': '',
+        'icon': 'gif',
+        'chip': false,
+        'open': false,
+        'auth': true
+    },
+    {
+        'name': 'Log in',
+        'link': '../register',
+        'icon': 'gif',
+        'chip': false,
+        'open': false,
+        'auth': false
+    },
+    {
+        'name': 'Register',
+        'link': 'register',
+        'icon': 'gif',
+        'chip': false,
+        'open': false,
+        'auth': false
     },
     {
         'name': 'Summary',
         'icon': 'mode_edit',
         'link': '/auth/scrumboard',
         'open': false,
+        'auth': true
     },  {
         'name': 'Sources',
         'icon': 'filter_center_focus',
         'link': 'tables/responsive',
         'open': false,
+        'auth': true
     },
     {
         'name': 'My Offers',
@@ -92,37 +101,45 @@ export const menus = [
         'link': '',
     // register
         'icon': 'grade',
+        'auth': true
     }, {
         'name': 'Tools',
         'open': false,
         'link': '',
         'icon': 'grade',
+        'auth': false
     }, {
         'name': 'Promotion',
         'open': false,
         'link': '',
         'icon': 'grade',
+        'auth': false
+
     }, {
         'name': 'Statistics',
         'open': false,
         'link': '',
         // material-widgets/icons
         'icon': 'grade',
+        'auth': true
     }, {
         'name': 'Referral',
         'open': false,
         'link': '',
         'icon': 'grade',
+        'auth': true
     }, {
         'name': 'Finance',
         'open': false,
         'link': '',
         'icon': 'grade',
+        'auth': true
     }, {
         'name': 'Support',
         'open': false,
         'link': '',
         'icon': 'grade',
+        'auth': true
     },
     // {
     //     'name': 'Tables',
