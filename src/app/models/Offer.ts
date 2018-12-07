@@ -8,6 +8,7 @@ export class Offer {
     public process_in_days: number;
     public post_click_days: number;
     public accept_rate: number;
+    public is_active: boolean;
 
 
     public assign(a: any) {
@@ -18,5 +19,6 @@ export class Offer {
         this.process_in_days = a.process_in_days;
         this.post_click_days = a.post_click_days;
         this.accept_rate = a.accept_rate;
+        this.is_active = a.is_active;
     }
 }

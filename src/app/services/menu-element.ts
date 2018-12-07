@@ -67,7 +67,7 @@ export const menus = [
         'onlyAuth': true
     }, {
         'name': 'Log in',
-        'link': '../register',
+        'link': 'login',//../register
         'icon': 'gif',
         // 'chip': false,
         'open': false,
