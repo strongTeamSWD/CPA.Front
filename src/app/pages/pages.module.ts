@@ -9,6 +9,8 @@ import {
         MatCheckboxModule,
         MatListModule,
        } from '@angular/material';
+
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,7 +19,6 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { CoreModule } from '../core/core.module';
-import { OffersComponent } from './offers/offers.component';
 
 @NgModule({
     imports: [
@@ -27,6 +28,7 @@ import { OffersComponent } from './offers/offers.component';
         MatButtonModule,
         MatButtonToggleModule,
         MatInputModule,
+        MatTabsModule,
         MatToolbarModule,
         MatIconModule,
         MatCheckboxModule,
@@ -37,8 +39,7 @@ import { OffersComponent } from './offers/offers.component';
     declarations: [   
         ContactComponent,
         AboutComponent,
-        ServicesComponent,
-        OffersComponent
+        ServicesComponent
     ],
     exports: [
     ],

@@ -10,7 +10,6 @@ export class Offer {
     public accept_rate: number;
     public is_active: boolean;
 
-
     public assign(a: any) {
         this.name = a.name;
         this.id = a.id;

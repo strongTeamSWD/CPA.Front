@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Router } from '@angular/router';
 // import { AuthService } from '../../core/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {AuthService} from '../../services/authService';
 import {AuthDetail} from '../../models/AuthDetail';
-import {UserDetail} from '../../models/UserDetail';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
   formErrors = {
     'email': '',
-    'password': '',
+    'password': ''
   };
   validationMessages = {
     'email': {
@@ -23,7 +22,6 @@ export class LoginComponent implements OnInit {
       'email'   : 'please enter your vaild email'
     },
     'password': {
-      'wrong'    : 'wrong email or password',
       'required' : 'please enter your password',
       'pattern'  : 'The password must contain numbers and letters',
       'minlength': 'Please enter more than 4 characters',
@@ -34,7 +32,6 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private fb: FormBuilder,
               private authService : AuthService,
-              private route: ActivatedRoute
   ) {
   }
 
@@ -84,24 +81,17 @@ export class LoginComponent implements OnInit {
   login() {
     let user = new AuthDetail();
     console.log(this.userForm);
-        user.login = this.userForm.value.email;
-        user.password    = this.userForm.value.password;
+        user.password = this.userForm.value.email;
+        user.login    = this.userForm.value.password;
 
 
-     this.authService.login(user).toPromise().then(res => {
-      console.log(res);
-      if(res.body)
-      {
-        this.authService.currentUser = res.body as UserDetail;
-        this.router.navigate(['/']);
-      }
-      else
-          this.formErrors['password'] = this.validationMessages['password']['wrong'];
-    }).catch(
-        err=>{
-          console.error(err);
-        }
-    );
+    // this.authService.login(user).toPromise().then(res => {
+    //   console.log(res);
+    // }).catch(
+    //     err=>{
+    //       console.error(err);
+    //     }
+    // );
   }
 }
 

@@ -183,7 +183,6 @@ export class HttpService {
                 }
             }
         }
-
         const response = await this.http.get(this.url(urlSuffix), ob.getBlob()).toPromise();
         const url = window.URL.createObjectURL(response.body);
         console.log(response.headers);

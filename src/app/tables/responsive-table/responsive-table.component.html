@@ -8,6 +8,11 @@
 		<div class="table-container">
 		
 		<table  matSort (matSortChange)="sortData($event)">
+
+
+
+
+
 					<!--<thead>-->
 						<!--<tr>-->
 							<!--<th mat-sort-header="{{th.key}}" scope="col" *ngFor="let th of helpers?.header">{{th.name}}</th>-->
@@ -23,15 +28,15 @@
 
 									<!--<mat-chip  (click)="findDuplicates(row)"-->
 									<!--selected="true"-->
-									<!--color="warn"  matTooltip="{{row['duplicate_applications'].length}} duplicate entries" -->
-											   <!--matTooltipPosition="right" *ngIf="th.key=='applicationNumber' && -->
+									<!--color="warn"  matTooltip="{{row['duplicate_applications'].length}} duplicate entries"-->
+											   <!--matTooltipPosition="right" *ngIf="th.key=='applicationNumber' &&-->
 											   <!--row['duplicate_applications'] != 'undefined' && row['duplicate_applications']-->
 											    <!--&& row['duplicate_applications'].length > 0" >-->
 									<!--{{row['duplicate_applications'].length }}-->
 									<!--</mat-chip>-->
 
 								<!--</span>-->
-          <!---->
+
 							<!--</td>-->
 							<!--</tr>-->
 							<!--<tr *ngIf="rows?.length==0 && status==false">-->
@@ -41,10 +46,21 @@
 							<!--</tr>-->
 					<!--</tbody>-->
 
+
+
+
+
+
+
+
 			<table class="table">
 				<tr>
 				<th mat-sort-header="{{th.key}}" scope="col" *ngFor="let th of helpers?.header">{{th.name}}</th>
 				</tr>
+
+
+
+
 				<!--<tr *ngFor="let item of rows; let i = index">-->
 					<!--<td>{{item.id}}</td>-->
 					<!--<td>{{item.name}}</td>-->
@@ -52,6 +68,11 @@
 					<!--<td>{{item.type}}</td>-->
 					<!--<td></td>-->
 				<!--</tr>-->
+
+
+
+
+
 			</table>
 
 					<thead *matHeaderRowDef="displayedColumns"></thead>

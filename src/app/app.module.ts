@@ -51,6 +51,7 @@ import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthenticationInterceptor} from './interceptors/AuthenticationInterceptor';
 import {AuthService} from './services/authService';
+import {MenuService} from './services/MenuService';
 
 @NgModule({
     declarations: [
@@ -113,6 +114,8 @@ import {AuthService} from './services/authService';
         },
         HttpService,
         AuthService,
+        MenuService,
+
     ],
     bootstrap: [AppComponent]
 })
