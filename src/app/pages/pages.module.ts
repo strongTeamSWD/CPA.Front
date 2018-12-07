@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { CoreModule } from '../core/core.module';
+import { OffersComponent } from './offers/offers.component';
 
 @NgModule({
     imports: [
@@ -36,7 +37,8 @@ import { CoreModule } from '../core/core.module';
     declarations: [   
         ContactComponent,
         AboutComponent,
-        ServicesComponent
+        ServicesComponent,
+        OffersComponent
     ],
     exports: [
     ],
