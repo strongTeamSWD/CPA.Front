@@ -8,9 +8,7 @@ const routes: Routes = [
     {path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
     {path: 'register', loadChildren: '../pages/register/register.module#RegisterModule'},
     {path: 'login', loadChildren: '../pages/login/login.module#LoginModule'},
-    {path: 'editor', loadChildren: '../editor/editor.module#EditorModule'},
-
-    {path: '**', redirectTo: 'auth/'},
+    {path: 'main', loadChildren: '../pages/pages.module#PagesModule'},
 ]
 
 @NgModule({

@@ -1,27 +1,28 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {ContactComponent} from './contact/contact.component';
+import {AboutComponent} from './about/about.component';
+import {ServicesComponent} from './services/services.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {OffersComponent} from './offers/offers.component';
+import {AuthComponent} from '../auth/auth.component';
 
 const pagesRoutes: Routes = [
-    { path: 'contact', component: ContactComponent , data: { animation: 'contact' } },
-    { path: 'about', component: AboutComponent , data: { animation: 'about' }},
-    { path: 'services', component: ServicesComponent , data: { animation: 'services' }},
-    { path: 'register', component: RegisterComponent , data: { animation: 'register' }},
-    { path: 'login', component: LoginComponent , data: { animation: 'login' }},
-    { path: 'offers', component: OffersComponent , data: { animation: 'offers' }},
-];
+    {
+        path: '', children: [
+            {path: '/contact', component: ContactComponent,},
+            {path: '/about', component: AboutComponent,},
+            {path: '/offers', component: OffersComponent,},]
+    }];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(pagesRoutes)
-  ],
-  exports: [
-    RouterModule
-  ]
+    imports: [
+        RouterModule.forRoot(pagesRoutes)
+    ],
+    exports: [
+        RouterModule
+    ]
 })
-export class PagesRouterModule {}
+export class PagesRouterModule {
+}

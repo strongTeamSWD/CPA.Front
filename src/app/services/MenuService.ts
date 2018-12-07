@@ -23,7 +23,7 @@ export class MenuService {
         this.menus = menus;
         if (onlyAuth) {
             for(let m of this.menus){
-                if (m.onlyAuth == true) {
+                if (m.onlyAuth) {
                     let index = this.menus.indexOf(m);
                     this.menus.splice(index, 1);
                 }
