@@ -13,8 +13,12 @@ export const environment = {
     storageBucket: 'newproject-5d731.appspot.com',
     messagingSenderId: '737689833575'
   },
+  urlPrefix: 'http://localhost:54855/api',
+
   mailApi: '/assets/list.json'
 };
+
+
 export const palete = {
     primary: '#D32F2F',
     accent: '#E65100',

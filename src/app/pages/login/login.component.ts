@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { AuthService } from '../../core/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {AuthService} from '../../services/authService';
+import {AuthDetail} from '../../models/AuthDetail';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,18 +19,20 @@ export class LoginComponent implements OnInit {
   validationMessages = {
     'email': {
       'required': 'Please enter your email',
-      'email': 'please enter your vaild email'
+      'email'   : 'please enter your vaild email'
     },
     'password': {
-      'required': 'please enter your password',
-      'pattern': 'The password must contain numbers and letters',
+      'required' : 'please enter your password',
+      'pattern'  : 'The password must contain numbers and letters',
       'minlength': 'Please enter more than 4 characters',
       'maxlength': 'Please enter less than 25 characters',
     }
   };
 
   constructor(private router: Router,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private authService : AuthService,
+  ) {
   }
 
   ngOnInit() {
@@ -55,27 +59,39 @@ export class LoginComponent implements OnInit {
   }
 
   onValueChanged(data?: any) {
-    // if (!this.userForm) {
-    //   return;
-    // }
-    // const form = this.userForm;
-    // for (const field in this.formErrors) {
-    //   if (Object.prototype.hasOwnProperty.call(this.formErrors, field)) {
-    //     this.formErrors[field] = '';
-    //     const control = form.get(field);
-    //     if (control && control.dirty && !control.valid) {
-    //       const messages = this.validationMessages[field];
-    //       for (const key in control.errors) {
-    //         if (Object.prototype.hasOwnProperty.call(control.errors, key)) {
-    //           this.formErrors[field] += messages[key] + ' ';
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+    if (!this.userForm) {
+       return;
+     }
+    const form = this.userForm;
+    for (const field in this.formErrors) {
+      if (Object.prototype.hasOwnProperty.call(this.formErrors, field)) {
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.validationMessages[field];
+          for (const key in control.errors) {
+            if (Object.prototype.hasOwnProperty.call(control.errors, key)) {
+              this.formErrors[field] += messages[key] + ' ';
+            }
+          }
+        }
+       }
+     }
   }
   login() {
-    this.router.navigate(['/']);
+    let user = new AuthDetail();
+    console.log(this.userForm);
+        user.password = this.userForm.value.email;
+        user.login    = this.userForm.value.password;
+
+
+    this.authService.login(user).toPromise().then(res => {
+      console.log(res);
+    }).catch(
+        err=>{
+          console.error(err);
+        }
+    );
   }
 }
 

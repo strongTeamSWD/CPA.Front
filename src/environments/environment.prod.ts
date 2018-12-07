@@ -8,5 +8,7 @@ export const environment = {
     storageBucket: 'newproject-5d731.appspot.com',
     messagingSenderId: '737689833575'
   },
-  mailApi: '/assets/list.json'
+    urlPrefix: 'http://localhost:54855/api',
+
+    mailApi: '/assets/list.json'
 };

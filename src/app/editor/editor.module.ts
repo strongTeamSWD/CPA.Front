@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuillModule } from 'ngx-quill';
 
 const routes: Routes = [
-    {path: 'editor', component: EditorComponent ,data: { animation: 'editor' }},
+    {path: '', component: EditorComponent ,data: { animation: 'editor' }},
   ];
 @NgModule({
     imports: [
