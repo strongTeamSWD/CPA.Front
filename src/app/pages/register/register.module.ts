@@ -6,15 +6,12 @@ import {
     MatButtonModule,
     MatButtonToggleModule,
     MatInputModule,
-    MatToolbarModule, MatDatepickerModule, MatSelectModule
+    MatToolbarModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-import { MatTabsModule } from '@angular/material/tabs';
 import {ScrumboardComponent} from '../../scrumboard/scrumboard.component';
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
 
 export const routes: Routes = [
     {path: '', component: RegisterComponent},
@@ -31,16 +28,11 @@ export const routes: Routes = [
         MatInputModule,
         MatToolbarModule,
         FormsModule,
-        MatSelectModule,
-        MatTabsModule,
         ReactiveFormsModule,
-        MatDatepickerModule,
         RouterModule.forChild(routes)
     ],
     declarations: [
-        RegisterComponent,
-        AdminRegisterComponent,
-        UserRegisterComponent
+        RegisterComponent
     ],
     exports: [
         RouterModule

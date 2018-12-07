@@ -1,38 +1,17 @@
-import {Component, OnInit, Input, SimpleChanges, OnChanges, AfterContentChecked} from '@angular/core';
-// import { menus } from '../../services/menu-element';
-import {AuthService} from '../../services/authService';
-import {MenuService} from '../../services/MenuService';
-
-//'./logout-menu-element'
+import { Component, OnInit, Input } from '@angular/core';
+import { menus } from './menu-element';//'./logout-menu-element'
 
 @Component({
   selector: 'cdk-sidemenu',
   templateUrl: './sidemenu.component.html',
   styleUrls: ['./sidemenu.component.scss']
 })
-export class SidemenuComponent implements OnInit {//, OnChanges, AfterContentChecked
+export class SidemenuComponent implements OnInit {
 
     @Input() iconOnly:boolean = false;
-    // public menus = menus;
-    public menus = this.menuService.menus;
+    public menus = menus;
 
-    constructor(public authService : AuthService, private menuService : MenuService) {
-
-    }
-
-    // ngOnChanges(changes: SimpleChanges){
-    //
-    //     // if (changes['authService.currentUser']) {
-    //     //     this.menus = menus;
-    //     // }
-    //     if (this.authService.currentUser)
-    //         this.menus = menus;
-    // }
-    // ngAfterContentChecked(){
-    //     // if (this.authService.currentUser)
-    //     //     this.menus = menus;
-    // }
-
+    constructor() { }
 
     ngOnInit() {
     }

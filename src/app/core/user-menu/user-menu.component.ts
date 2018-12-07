@@ -9,7 +9,7 @@ export class UserMenuComponent implements OnInit {
 	isOpen: boolean = false;
 
   	//currentUser = null;
-  	// Hari;
+  	Hari;
   	
 
   	@Input() currentUser = null;

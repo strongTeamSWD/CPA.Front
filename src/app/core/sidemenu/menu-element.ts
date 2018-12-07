@@ -5,22 +5,20 @@ export const menus = [
         'link': false,
         'open': false,
         'sub': [
-            // {
-            //     'name': 'ACCOUNT',
-            //     'link': '',
-            //     // material-widgets/buttons
-            //     'icon': 'indeterminate_check_box',
-            //     'chip': false,
-            //     'open': false,
-            //     'auth': true
-            // },
+            {
+                'name': 'ACCOUNT',
+                'link': '',
+                // material-widgets/buttons
+                'icon': 'indeterminate_check_box',
+                'chip': false,
+                'open': false,
+            },
             {
                 'name': 'ABOUT US',
                 'link': 'material-widgets/list',
                 'icon': 'list',
                 'chip': false,
                 'open': false,
-                'onlyAuth': false,
             },
             // {
             //
@@ -45,111 +43,87 @@ export const menus = [
                 'icon': 'cached',
                 'chip': false,
                 'open': false,
-                'onlyAuth': false
             },
-            // {
-            //     'name': 'OFFERS',
-            //     'link': '',
-            //     // material-widgets/cards
-            //     'icon': 'crop_16_9',
-            //     'chip': false,
-            //     'open': false,
-            //     'auth': true
-            // },
+            {
+                'name': 'OFFERS',
+                'link': '',
+                // material-widgets/cards
+                'icon': 'crop_16_9',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Log out',
+                'link': '',
+                'icon': 'gif',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Log in',
+                'link': '../login',
+                'icon': 'gif',
+                'chip': false,
+                'open': false,
+            },
+            {
+                'name': 'Register',
+                'link': 'register',
+                'icon': 'gif',
+                'chip': false,
+                'open': false,
+            }
         ]
     },
     {
-        'name': 'Log out',
-        'link': '',
-        'icon': 'gif',
-        // 'chip': false,
-        'open': false,
-        'onlyAuth': true
-    }, {
-        'name': 'Log in',
-        'link': '../register',
-        'icon': 'gif',
-        // 'chip': false,
-        'open': false,
-        'onlyAuth': false
-    }, {
-        'name': 'Register',
-        'link': 'register',
-        'icon': 'gif',
-        // 'chip': false,
-        'open': false,
-        'onlyAuth': false
-    }, {
         'name': 'Summary',
         'icon': 'mode_edit',
         'link': '/auth/scrumboard',
         'open': false,
-        'onlyAuth': true
-    }, {
+    },  {
         'name': 'Sources',
         'icon': 'filter_center_focus',
         'link': 'tables/responsive',
         'open': false,
-        'onlyAuth': true
-    }, {
-        'name': 'My Offers-fixed',
+    },
+    {
+        'name': 'My Offers',
         'open': false,
-        'link': 'tables/fixed',
+        'link': '',
+    // register
         'icon': 'grade',
-        'onlyAuth': true
     }, {
-        'name': 'Tools-featured',
+        'name': 'Tools',
         'open': false,
-        'link': 'tables/featured',
+        'link': '',
         'icon': 'grade',
-        'onlyAuth': false
     }, {
-        'name': 'Statistics-responsive',
+        'name': 'Promotion',
         'open': false,
-        'link': 'tables/responsive',
+        'link': '',
+        'icon': 'grade',
+    }, {
+        'name': 'Statistics',
+        'open': false,
+        'link': '',
         // material-widgets/icons
         'icon': 'grade',
-        'onlyAuth': true
+    }, {
+        'name': 'Referral',
+        'open': false,
+        'link': '',
+        'icon': 'grade',
+    }, {
+        'name': 'Finance',
+        'open': false,
+        'link': '',
+        'icon': 'grade',
+    }, {
+        'name': 'Support',
+        'open': false,
+        'link': '',
+        'icon': 'grade',
     },
-    // {
-    //     'name': 'Promotion',
-    //     'open': false,
-    //     'link': '',
-    //     'icon': 'grade',
-    //     'onlyAuth': false
-    //
-    // },
-    // {
-    //     'name': 'Referral',
-    //     'open': false,
-    //     'link': '',
-    //     'icon': 'grade',
-    //     'onlyAuth': true
-    // }, {
-    //     'name': 'Finance',
-    //     'open': false,
-    //     'link': '',
-    //     'icon': 'grade',
-    //     'onlyAuth': true
-    // }, {
-    //     'name': 'Support',
-    //     'open': false,
-    //     'link': '',
-    //     'icon': 'grade',
-    //     'onlyAuth': true
-    // },
-
-
-
-
-
-
-
-
-
-
-
-
     // {
     //     'name': 'Tables',
     //     'icon': 'list',
@@ -214,7 +188,7 @@ export const menus = [
     //             'name': 'Login',
     //             'icon': 'work',
     //             'open': false,
-    //             'link': '../register',
+    //             'link': '../login',
     //         }, {
     //             'name': 'Services',
     //             'icon': 'local_laundry_service',
