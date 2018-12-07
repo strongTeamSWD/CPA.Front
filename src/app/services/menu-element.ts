@@ -92,19 +92,19 @@ export const menus = [
         'open': false,
         'onlyAuth': true
     }, {
-        'name': 'My Offers',
+        'name': 'My Offers-fixed',
         'open': false,
         'link': 'tables/fixed',
         'icon': 'grade',
         'onlyAuth': true
     }, {
-        'name': 'Tools',
+        'name': 'Tools-featured',
         'open': false,
         'link': 'tables/featured',
         'icon': 'grade',
         'onlyAuth': false
     }, {
-        'name': 'Statistics',
+        'name': 'Statistics-responsive',
         'open': false,
         'link': 'tables/responsive',
         // material-widgets/icons
