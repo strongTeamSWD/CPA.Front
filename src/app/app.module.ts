@@ -52,6 +52,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthenticationInterceptor} from './interceptors/AuthenticationInterceptor';
 import {AuthService} from './services/authService';
 import {MenuService} from './services/MenuService';
+import {OfferService} from './services/offerService';
 
 @NgModule({
     declarations: [
@@ -115,7 +116,7 @@ import {MenuService} from './services/MenuService';
         HttpService,
         AuthService,
         MenuService,
-
+        OfferService,
     ],
     bootstrap: [AppComponent]
 })

@@ -19,6 +19,7 @@ export class GuardedRoutesComponent implements OnInit {
   ngOnInit() {
 
   }
+
   Onclick() {
 
     this.router.navigate(['/auth/guarded-routes/example']);

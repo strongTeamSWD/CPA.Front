@@ -47,15 +47,14 @@ export const menus = [
                 'open': false,
                 'onlyAuth': false
             },
-            // {
-            //     'name': 'OFFERS',
-            //     'link': '',
-            //     // material-widgets/cards
-            //     'icon': 'crop_16_9',
-            //     'chip': false,
-            //     'open': false,
-            //     'auth': true
-            // },
+            {
+                'name': 'OFFERS',
+                'link': '/offers',
+                'icon': 'crop_16_9',
+                'chip': false,
+                'open': false,
+                'auth': true
+            },
         ]
     },
     {
@@ -67,14 +66,14 @@ export const menus = [
         'onlyAuth': true
     }, {
         'name': 'Log in',
-        'link': 'login',//../register
+        'link': '/login',//../register
         'icon': 'gif',
         // 'chip': false,
         'open': false,
         'onlyAuth': false
     }, {
         'name': 'Register',
-        'link': 'register',
+        'link': '/register',
         'icon': 'gif',
         // 'chip': false,
         'open': false,

@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
+import {OffersComponent} from './offers/offers.component';
 
 const pagesRoutes: Routes = [
     { path: 'contact', component: ContactComponent , data: { animation: 'contact' } },
@@ -12,6 +13,7 @@ const pagesRoutes: Routes = [
     { path: 'services', component: ServicesComponent , data: { animation: 'services' }},
     { path: 'register', component: RegisterComponent , data: { animation: 'register' }},
     { path: 'login', component: LoginComponent , data: { animation: 'login' }},
+    { path: 'offers', component: OffersComponent , data: { animation: 'offers' }},
 ];
 
 @NgModule({

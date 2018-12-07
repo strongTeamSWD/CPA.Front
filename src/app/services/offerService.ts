@@ -19,11 +19,23 @@ export class OfferService {
     }
 
     getAllOffers(){
-       return this.httpService.get(SERVER_API_URL.CREATE_OFFER);
+       return this.httpService.get(SERVER_API_URL.GET_ALL_OFFERS);
     }
 
-    getOfferById(){}
+    getOfferById(id : number){
+        let param = {
+            id : id
+        };
 
-    deleteOffers(){}
+        return this.httpService.get(SERVER_API_URL.GET_OFFER_BY_ID,param,HttpResponseTypes.JSON);
+    }
+
+    deleteOffers(offer : Offer){
+        let param = {
+          offer : offer
+        };
+
+        return this.httpService.get(SERVER_API_URL.DELETE_OFFER_BY_ID,param);
+    }
 
 }
