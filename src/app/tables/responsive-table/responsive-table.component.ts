@@ -15,7 +15,7 @@ export class ResponsiveTableComponent implements OnInit {
 
 	@ViewChild(MatPaginator) paginator1: MatPaginator;
     pageLength = 0;
-    pageSize = 15;
+    pageSize = 2;
     helpers = ResponsiveTableHelpers;
     @Input() status;
     @Input() actionStatus;

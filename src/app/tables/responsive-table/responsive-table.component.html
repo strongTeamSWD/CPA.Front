@@ -52,8 +52,6 @@
 
 
 
-
-			<table class="table">
 				<tr>
 				<th mat-sort-header="{{th.key}}" scope="col" *ngFor="let th of helpers?.header">{{th.name}}</th>
 				</tr>
@@ -61,22 +59,21 @@
 
 
 
-				<!--<tr *ngFor="let item of rows; let i = index">-->
-					<!--<td>{{item.id}}</td>-->
-					<!--<td>{{item.name}}</td>-->
-					<!--<td>{{item.description}}</td>-->
-					<!--<td>{{item.type}}</td>-->
-					<!--<td></td>-->
-				<!--</tr>-->
+				<tr *ngFor="let item of rows; let i = index">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.description}}</td>
+					<td>{{item.type}}</td>
+					<td>{{item.action}}</td>
+				</tr>
 
 
 
 
 
-			</table>
 
-					<thead *matHeaderRowDef="displayedColumns"></thead>
-					<tr *matRowDef="let row; columns: displayedColumns;"></tr>
+					<!--<thead *matHeaderRowDef="displayedColumns"></thead>-->
+					<!--<tr *matRowDef="let row; columns: displayedColumns;"></tr>-->
 				</table>
 				<mat-paginator [length]="pageLength"
 		              [pageSize]="pageSize"

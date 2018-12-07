@@ -19,6 +19,11 @@ export const ResponsiveTableHelpers = {
             name:'Type',
             key:'type',
             order:'asc'
+        },
+      {
+            name:'Action',
+            key:'action',
+            order:'asc'
         }
     ],
     rows : [
