@@ -88,23 +88,20 @@ export class LoginComponent implements OnInit {
         user.password    = this.userForm.value.password;
 
 
-     this.authService.login(user).subscribe(res=>{
-
-     });
-      //.toPromise().then(res => {
-    //   console.log(res);
-    //   if(res.body)
-    //   {
-    //     this.authService.currentUser = res.body as UserDetail;
-    //     this.router.navigate(['/']);
-    //   }
-    //   else
-    //       this.formErrors['password'] = this.validationMessages['password']['wrong'];
-    // }).catch(
-    //     err=>{
-    //       console.error(err);
-    //     }
-    // );
+     this.authService.login(user).toPromise().then(res => {
+      console.log(res);
+      if(res.body)
+      {
+        this.authService.currentUser = res.body as UserDetail;
+        this.router.navigate(['/']);
+      }
+      else
+          this.formErrors['password'] = this.validationMessages['password']['wrong'];
+    }).catch(
+        err=>{
+          console.error(err);
+        }
+    );
   }
 }
 
