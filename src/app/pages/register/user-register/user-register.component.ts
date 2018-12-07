@@ -1,13 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {User} from '../../../models/User';
+import {AuthService} from '../../../services/authService';
 
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.scss']
 })
+
+
 export class UserRegisterComponent implements OnInit {
+    @Input() role: number;
+    // email: string;
+    // password: string;
+    // password2: string;
+    // name: string;
+    // surname: string;
+    // phone: string;
+    birth_date = new FormControl(new Date());
+
+    genders: Genders[] = [
+        {value: 1, viewValue: 'Male'},
+        {value: 2, viewValue: 'Female'},
+    ];
 
     userForm: FormGroup;
     formErrors = {
@@ -16,10 +33,11 @@ export class UserRegisterComponent implements OnInit {
         'password2': '',
         'name': '',
         'surname': '',
-        'company': '',
         'phone': '',
-        'site': '',
-        'country': ''
+        'gender': '',
+        // 'site': '',
+        // 'country': '',
+        // 'company': ''
     };
     validationMessages = {
         'email': {
@@ -47,26 +65,30 @@ export class UserRegisterComponent implements OnInit {
             'minlength': 'Please enter more than 2 characters',
             'maxlength': 'Please enter less than 25 characters',
         },
-        'company':{
-            'required': 'Please enter your Company name',
-            'minlength': 'Please enter more than 2 characters',
-            'maxlength': 'Please enter less than 25 characters',
-        },
         'phone':{
             'required': 'Please enter your Phone',
             'pattern': 'The Phone must contain numbers',
             'minlength': 'Please enter more than 2 characters',
             'maxlength': 'Please enter less than 25 characters',
         },
-        'site':{
-            'required': 'Please enter your Site',
+        'gender':{
+            'required': 'Please choose your sex',
         },
-        'country':{
-            'required': 'Please enter your Site',
-        }
+        // 'site':{
+        //     'required': 'Please enter your Site',
+        // },
+        // 'company':{
+        //     'required': 'Please enter your Company name',
+        //     'minlength': 'Please enter more than 2 characters',
+        //     'maxlength': 'Please enter less than 25 characters',
+        // },
+        // 'country':{
+        //     'required': 'Please enter your Site',
+        // }
     };
     constructor(private router: Router,
-                private fb: FormBuilder) { }
+                private fb: FormBuilder,
+                private authService : AuthService) { }
 
     ngOnInit() {
         this.buildForm();
@@ -108,13 +130,6 @@ export class UserRegisterComponent implements OnInit {
                 Validators.maxLength(25)
             ]
             ],
-            'company': ['', [
-                Validators.required,
-                Validators.pattern('^[a-zA-Z]*[ -]*[a-zA-Z]*$'),
-                Validators.minLength(2),
-                Validators.maxLength(25)
-            ]
-            ],
             'phone': ['', [
                 Validators.required,
                 Validators.pattern('^[+]*[0-9 -()]*[0-9 -]*[0-9]$'),
@@ -122,14 +137,25 @@ export class UserRegisterComponent implements OnInit {
                 Validators.maxLength(25)
             ]
             ],
-            'site': ['', [
+            'gender': ['', [
                 Validators.required,
             ]
             ],
-            'country': ['', [
-                Validators.required,
-            ]
-            ],
+            // 'site': ['', [
+            //     Validators.required,
+            // ]
+            // ],
+            // 'company': ['', [
+            //     Validators.required,
+            //     Validators.pattern('^[a-zA-Z]*[ -]*[a-zA-Z]*$'),
+            //     Validators.minLength(2),
+            //     Validators.maxLength(25)
+            // ]
+            // ],
+            // 'country': ['', [
+            //     Validators.required,
+            // ]
+            // ],
         },{validator: this.checkIfMatchingPasswords('password', 'password2')});// PasswordValidator.areEqual(this.userForm));
 
         this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
@@ -172,10 +198,24 @@ export class UserRegisterComponent implements OnInit {
     }
     register() {
 
-        //per
+        let user : User = new User();
+         user.name = this.userForm.value.name;
+         user.surname = this.userForm.value.surname;
+         user.phone_number = this.userForm.value.phone;
+         user.login = this.userForm.value.email;
+         user.password = this.userForm.value.password;
+         user.role_id = this.userForm.value.role;
+         user.birth_date = this.userForm.value.birth_date;
+         user.gender_id = this.userForm.value.gender;
+         user.is_active = true;
 
+        this.authService.register(user);
 
         this.router.navigate(['/']);
     }
 
+}
+export interface Genders {
+    value: number;
+    viewValue: string;
 }

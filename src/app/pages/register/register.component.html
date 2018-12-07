@@ -12,11 +12,11 @@ background-size: cover; ">
                 </mat-card-title>
                 <mat-tab-group fxFlexFill  [selectedIndex]="selected.value"  (selectedIndexChange)="selected.setValue($event)">
                     <mat-tab label="PUBLISHER">
-                        <app-user-register></app-user-register>
+                        <app-user-register [role]=1></app-user-register>
                     </mat-tab>
                     <mat-tab label="ADVERTISER">
                         <div class="component-preview">
-                            <app-user-register></app-user-register>
+                            <app-user-register [role]=2></app-user-register>
                         </div>
                     </mat-tab>
                     <mat-tab label="ADMIN">

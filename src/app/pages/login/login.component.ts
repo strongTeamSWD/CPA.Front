@@ -85,13 +85,13 @@ export class LoginComponent implements OnInit {
         user.login    = this.userForm.value.password;
 
 
-    this.authService.login(user).toPromise().then(res => {
-      console.log(res);
-    }).catch(
-        err=>{
-          console.error(err);
-        }
-    );
+    // this.authService.login(user).toPromise().then(res => {
+    //   console.log(res);
+    // }).catch(
+    //     err=>{
+    //       console.error(err);
+    //     }
+    // );
   }
 }
 

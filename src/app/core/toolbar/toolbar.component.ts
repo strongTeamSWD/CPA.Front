@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ToolbarHelpers } from './toolbar.helpers';
+import {AuthService} from '../../services/authService';
 
 @Component({
   selector: 'cdk-toolbar',
@@ -12,13 +13,16 @@ export class ToolbarComponent implements OnInit {
 	@Input() sidebar;
 	@Input() drawer;
 	@Input() matDrawerShow;
+
+	public username: string = null//this.authService.currentUser.login;
   
 	searchOpen: boolean = false;
 	signIn: boolean = false;
     toolbarHelpers = ToolbarHelpers;
-  	constructor() { }
+  	constructor(public authService : AuthService) { }
 
   	ngOnInit() {
+  		// this.toolbarHelpers.currentUser.currentUserName = this.authService.currentUser.login;
   	}
 
 }

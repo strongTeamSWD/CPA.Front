@@ -20,19 +20,34 @@
         <mat-error *ngIf="formErrors.surname">{{ formErrors.surname }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input type="text" id="company" class="input"
-               placeholder="Company"
-               formControlName="company" required matInput>
-        <mat-error *ngIf="formErrors.company">{{ formErrors.company }}</mat-error>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Birth Date" [formControl]="birth_date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input type="text" id="site" class="input"
-               placeholder="Site"
-               formControlName="site" required matInput>
-        <mat-error *ngIf="formErrors.site">{{ formErrors.site }}</mat-error>
+      <mat-form-field>
+        <mat-select placeholder="Sex"  formControlName="gender">
+          <mat-option *ngFor="let gender of genders" [value]="gender.value">
+            {{gender.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formErrors.gender">{{ formErrors.gender}}</mat-error>
       </mat-form-field>
+
+      <!--<mat-form-field class="full-width">-->
+        <!--<input type="text" id="company" class="input"-->
+               <!--placeholder="Company"-->
+               <!--formControlName="company" required matInput>-->
+        <!--<mat-error *ngIf="formErrors.company">{{ formErrors.company }}</mat-error>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field class="full-width">-->
+        <!--<input type="text" id="site" class="input"-->
+               <!--placeholder="Site"-->
+               <!--formControlName="site" required matInput>-->
+        <!--<mat-error *ngIf="formErrors.site">{{ formErrors.site }}</mat-error>-->
+      <!--</mat-form-field>-->
 
       <mat-form-field class="full-width">
         <input type="text" id="phone" class="input"
@@ -41,12 +56,12 @@
         <mat-error *ngIf="formErrors.phone">{{ formErrors.phone }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <input type="text" id="country" class="input"
-               placeholder="Country"
-               formControlName="country" required matInput>
-        <mat-error *ngIf="formErrors.country">{{ formErrors.country }}</mat-error>
-      </mat-form-field>
+      <!--<mat-form-field class="full-width">-->
+        <!--<input type="text" id="country" class="input"-->
+               <!--placeholder="Country"-->
+               <!--formControlName="country" required matInput>-->
+        <!--<mat-error *ngIf="formErrors.country">{{ formErrors.country }}</mat-error>-->
+      <!--</mat-form-field>-->
 
       <mat-form-field class="full-width">
         <input type="email" id="email" class="input"
@@ -64,7 +79,7 @@
       <!--class="help is-danger"-->
       <mat-form-field class="full-width">
         <input type="password" id="password2" class="input"
-               placeholder="please  enter your password confirmation"
+               placeholder="Password confirmation"
                formControlName="password2" required matInput>
         <mat-error *ngIf="formErrors.password2">{{ formErrors.password2 }}</mat-error>
       </mat-form-field>

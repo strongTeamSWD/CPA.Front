@@ -6,7 +6,7 @@ import {
     MatButtonModule,
     MatButtonToggleModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule, MatDatepickerModule, MatSelectModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
@@ -31,8 +31,10 @@ export const routes: Routes = [
         MatInputModule,
         MatToolbarModule,
         FormsModule,
+        MatSelectModule,
         MatTabsModule,
         ReactiveFormsModule,
+        MatDatepickerModule,
         RouterModule.forChild(routes)
     ],
     declarations: [

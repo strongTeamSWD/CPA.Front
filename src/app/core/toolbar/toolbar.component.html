@@ -36,8 +36,10 @@
     <!--</button>-->
     <!--<app-register [open]="signIn"></app-register>-->
 
-    <cdk-user-menu [currentUser]="toolbarHelpers?.currentUser" *ngIf="toolbarHelpers?.currentUser?.currentUserName"></cdk-user-menu>
-    
+    <!--<cdk-user-menu [currentUser]="toolbarHelpers?.currentUser" *ngIf="toolbarHelpers?.currentUser?.currentUserName"></cdk-user-menu>-->
+    <cdk-user-menu [currentUser]="this.authService?.currentUser" *ngIf="this.authService?.currentUser?.login"></cdk-user-menu>
+    <!--<cdk-user-menu *ngIf="this?.username"></cdk-user-menu>-->
+
      <button mat-icon-button (click)="sidebar.toggle();">
         <i class="material-icons app-toolbar-menu">menu </i>
     </button>
