@@ -20,7 +20,7 @@ export const menus = [
                 'icon': 'list',
                 'chip': false,
                 'open': false,
-                'auth': false
+                'onlyAuth': false,
             },
             // {
             //
@@ -45,7 +45,7 @@ export const menus = [
                 'icon': 'cached',
                 'chip': false,
                 'open': false,
-                'auth': false
+                'onlyAuth': false
             },
             // {
             //     'name': 'OFFERS',
@@ -62,85 +62,94 @@ export const menus = [
         'name': 'Log out',
         'link': '',
         'icon': 'gif',
-        'chip': false,
+        // 'chip': false,
         'open': false,
-        'auth': true
-    },
-    {
+        'onlyAuth': true
+    }, {
         'name': 'Log in',
         'link': '../register',
         'icon': 'gif',
-        'chip': false,
+        // 'chip': false,
         'open': false,
-        'auth': false
-    },
-    {
+        'onlyAuth': false
+    }, {
         'name': 'Register',
         'link': 'register',
         'icon': 'gif',
-        'chip': false,
+        // 'chip': false,
         'open': false,
-        'auth': false
-    },
-    {
+        'onlyAuth': false
+    }, {
         'name': 'Summary',
         'icon': 'mode_edit',
         'link': '/auth/scrumboard',
         'open': false,
-        'auth': true
-    },  {
+        'onlyAuth': true
+    }, {
         'name': 'Sources',
         'icon': 'filter_center_focus',
         'link': 'tables/responsive',
         'open': false,
-        'auth': true
-    },
-    {
+        'onlyAuth': true
+    }, {
         'name': 'My Offers',
         'open': false,
-        'link': '',
-    // register
+        'link': 'tables/fixed',
         'icon': 'grade',
-        'auth': true
+        'onlyAuth': true
     }, {
         'name': 'Tools',
         'open': false,
-        'link': '',
+        'link': 'tables/featured',
         'icon': 'grade',
-        'auth': false
-    }, {
-        'name': 'Promotion',
-        'open': false,
-        'link': '',
-        'icon': 'grade',
-        'auth': false
-
+        'onlyAuth': false
     }, {
         'name': 'Statistics',
         'open': false,
-        'link': '',
+        'link': 'tables/responsive',
         // material-widgets/icons
         'icon': 'grade',
-        'auth': true
-    }, {
-        'name': 'Referral',
-        'open': false,
-        'link': '',
-        'icon': 'grade',
-        'auth': true
-    }, {
-        'name': 'Finance',
-        'open': false,
-        'link': '',
-        'icon': 'grade',
-        'auth': true
-    }, {
-        'name': 'Support',
-        'open': false,
-        'link': '',
-        'icon': 'grade',
-        'auth': true
+        'onlyAuth': true
     },
+    // {
+    //     'name': 'Promotion',
+    //     'open': false,
+    //     'link': '',
+    //     'icon': 'grade',
+    //     'onlyAuth': false
+    //
+    // },
+    // {
+    //     'name': 'Referral',
+    //     'open': false,
+    //     'link': '',
+    //     'icon': 'grade',
+    //     'onlyAuth': true
+    // }, {
+    //     'name': 'Finance',
+    //     'open': false,
+    //     'link': '',
+    //     'icon': 'grade',
+    //     'onlyAuth': true
+    // }, {
+    //     'name': 'Support',
+    //     'open': false,
+    //     'link': '',
+    //     'icon': 'grade',
+    //     'onlyAuth': true
+    // },
+
+
+
+
+
+
+
+
+
+
+
+
     // {
     //     'name': 'Tables',
     //     'icon': 'list',

@@ -1,6 +1,7 @@
-import {Component, OnInit, Input, SimpleChanges} from '@angular/core';
-import { menus } from './menu-element';
+import {Component, OnInit, Input, SimpleChanges, OnChanges, AfterContentChecked} from '@angular/core';
+// import { menus } from '../../services/menu-element';
 import {AuthService} from '../../services/authService';
+import {MenuService} from '../../services/MenuService';
 
 //'./logout-menu-element'
 
@@ -9,28 +10,29 @@ import {AuthService} from '../../services/authService';
   templateUrl: './sidemenu.component.html',
   styleUrls: ['./sidemenu.component.scss']
 })
-export class SidemenuComponent implements OnInit {
+export class SidemenuComponent implements OnInit {//, OnChanges, AfterContentChecked
 
     @Input() iconOnly:boolean = false;
-    public menus = menus;
+    // public menus = menus;
+    public menus = this.menuService.menus;
 
-    constructor(public authService : AuthService) {
-        if (!this.authService.currentUser) {
-            for(let m of menus){
-                if (m.auth == true) {
-                    let index = this.menus.indexOf(m);
-                    this.menus.splice(index, 1);
-                }
-            }
-        }
+    constructor(public authService : AuthService, private menuService : MenuService) {
+
     }
 
-    ngOnChanges(changes: SimpleChanges){
+    // ngOnChanges(changes: SimpleChanges){
+    //
+    //     // if (changes['authService.currentUser']) {
+    //     //     this.menus = menus;
+    //     // }
+    //     if (this.authService.currentUser)
+    //         this.menus = menus;
+    // }
+    // ngAfterContentChecked(){
+    //     // if (this.authService.currentUser)
+    //     //     this.menus = menus;
+    // }
 
-        // if (changes['authService.currentUser']) {
-        //     this.menus = menus;
-        // }
-    }
 
     ngOnInit() {
     }
