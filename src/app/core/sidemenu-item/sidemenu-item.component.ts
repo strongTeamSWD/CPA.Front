@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {LocalStorageService} from '../../services/localStorageService';
 
 @Component({
     selector: 'cdk-sidemenu-item',
@@ -11,7 +12,7 @@ export class SidemenuItemComponent implements OnInit {
     @Input() iconOnly: boolean;
     @Input() secondaryMenu = false;
 
-    constructor() { }
+    constructor(localStorageService : LocalStorageService) { }
 
     ngOnInit() {
     }

@@ -16,7 +16,7 @@ export class Webmaster {
     public assign(a: any) {
         this.user_id = a.user_id;
         this.level_id = a.level_id;
-        this.is_active = a.is_active;
+        this.is_active = a.isActive;
         // this.company = a.company;
         // this.site = a.site;
     }

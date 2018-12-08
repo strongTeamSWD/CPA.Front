@@ -1,10 +1,10 @@
 export class Aim {
-    public Id: number;
+    public id: number;
 
-    public OfferID : number;
-    public Name  : string;
-    public Payment : number;
-    public ProcessingDays : number;
-    public PostClickDays  : number;
-    public AcceptRate : number;
+    public offerID : number;
+    public name  : string;
+    public payment : number;
+    public processingDays : number;
+    public postClickDays  : number;
+    public acceptRate : number;
 }

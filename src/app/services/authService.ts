@@ -5,6 +5,7 @@ import {AuthDetail} from '../models/AuthDetail';
 import {HttpService} from './HttpService';
 import {User} from '../models/User';
 import {MenuService} from './MenuService';
+import {HttpResponseTypes} from '../variables/HttpResponseTypes';
 
 @Injectable()
 export class AuthService {
@@ -14,21 +15,25 @@ export class AuthService {
     {}
 
     public register(user: User){
-        let userD = new AuthDetail();
-        userD.login = user.login;
-        userD.password = user.password;
-        this.httpService.post(SERVER_API_URL.REGISTER_URL, user, null);
-        this.login(userD);
+       return this.httpService.post(SERVER_API_URL.REGISTER_URL, user, HttpResponseTypes.JSON);
     }
 
     public login(user:AuthDetail) {
-        this.currentUser = new UserDetail();
+        let param = {
+            login    : user.login,
+            password : user.password
+        };
+
+      return this.httpService.post(SERVER_API_URL.LOGIN_URL,param,HttpResponseTypes.JSON);
+    }
+
+    /*TODO COOKIES
+    *        this.currentUser = new UserDetail();
         this.currentUser.login = user.login;
         this.currentUser.token = user.token;
         this.currentUser.guid = user.guid;
         this.menuService.changeAuthorized(false);
-      return this.httpService.post(SERVER_API_URL.LOGIN_URL,user,"json");
-    }
+    * */
 
     public logout()
     {

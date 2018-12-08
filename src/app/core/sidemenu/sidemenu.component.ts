@@ -14,9 +14,9 @@ export class SidemenuComponent implements OnInit {//, OnChanges, AfterContentChe
 
     @Input() iconOnly:boolean = false;
     // public menus = menus;
-    public menus = this.menuService.menus;
 
-    constructor(public authService : AuthService, private menuService : MenuService) {
+
+    constructor(public authService : AuthService, public menuService : MenuService) {
 
     }
 

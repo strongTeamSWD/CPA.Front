@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import {LocalStorageService} from '../../services/localStorageService';
 
 @Component({
   selector: 'cdk-user-menu',
@@ -12,7 +13,8 @@ export class UserMenuComponent implements OnInit {
   	// Hari;
   	
 
-  	@Input() currentUser = null;
+	currentUser = null;
+
   	@HostListener('document:click', ['$event', '$event.target'])
   	onClick(event: MouseEvent, targetElement: HTMLElement) {
     	if (!targetElement) {
@@ -26,13 +28,16 @@ export class UserMenuComponent implements OnInit {
   	}
   	
     
-  	constructor(private elementRef: ElementRef) { }
+  	constructor(private elementRef: ElementRef, public localStorageService : LocalStorageService)
+	{ }
 
 
   	ngOnInit() {
+  		this.currentUser = this.localStorageService.currentUser;
   	}
 
     logout() {
-
+		console.log("Log out");
+  		this.localStorageService.clear();
     }
 }

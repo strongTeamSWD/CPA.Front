@@ -52,6 +52,7 @@ import {AuthenticationInterceptor} from './interceptors/AuthenticationIntercepto
 import {AuthService} from './services/authService';
 import {MenuService} from './services/MenuService';
 import {OfferService} from './services/offerService';
+import {LocalStorageService} from './services/localStorageService';
 
 @NgModule({
     declarations: [
@@ -116,6 +117,7 @@ import {OfferService} from './services/offerService';
         AuthService,
         MenuService,
         OfferService,
+        LocalStorageService,
     ],
     bootstrap: [AppComponent]
 })

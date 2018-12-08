@@ -22,12 +22,12 @@ export class OffersComponent implements OnInit {
   setDisplayColumns(){
 
       this.displayedColumns = [
-          { field: 'Id', header: 'Vin' },
-          { field: 'Name', header: 'Year' },
-          { field: 'Description', header: 'Description' },
-          { field: 'Aims', header: 'Aims' },
-          { field: 'LevelId', header: 'Level Id' },
-          { field: 'MinLevel', header: 'Min Level' },
+          { field: 'id', header: 'Vin' },
+          { field: 'name', header: 'Year' },
+          { field: 'description', header: 'Description' },
+          { field: 'aims', header: 'Aims' },
+          { field: 'levelId', header: 'Level Id' },
+          { field: 'minLevel', header: 'Min Level' },
           { field: 'startDate', header: 'Start Date' },
           { field: 'accept_rate', header: 'accept rate' },
       ];

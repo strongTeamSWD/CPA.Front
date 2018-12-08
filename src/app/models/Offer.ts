@@ -3,15 +3,15 @@ import {GeoTarget} from './GeoTarget';
 
 
 export class Offer {
-    public Id: number;
-    public Name: string;
-    public Description: string;
-    public Aims: Aim[];
-    public GeoTargets: GeoTarget[];
-    public LvelId: number;
-    public MinLevel: number;
-    public IsActive: boolean;
-    public StartDate : Date;
-    public FinishDate  : Date;
+    public id: number;
+    public name: string;
+    public description: string;
+    public aims: Aim[];
+    public geoTargets: GeoTarget[];
+    public lvelId: number;
+    public minLevel: number;
+    public isActive: boolean;
+    public startDate : Date;
+    public finishDate  : Date;
 
 }

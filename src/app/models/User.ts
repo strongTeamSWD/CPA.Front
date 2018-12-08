@@ -2,7 +2,7 @@
 export class User {
 
     public gender_id: number;
-    public role_id: number;
+    public roleId: number;
     public login: string;
     public password: string;
 
@@ -10,8 +10,10 @@ export class User {
     public surname: string;
 
     public birth_date: string;
-    public phone_number: string;
-    public is_active: boolean;
+    public phoneNumber: string;
+    public isActive: boolean;
+    public email : string;
+    
 
     public static create(a: any): User {
         const ret = new User();
@@ -23,12 +25,12 @@ export class User {
         this.name = a.name;
         this.surname = a.surname;
         this.gender_id = a.gender_id;
-        this.phone_number = a.phone_number;
+        this.phoneNumber = a.phoneNumber;
         this.birth_date = a.birth_date;
-        this.is_active = a.is_active;
+        this.isActive = a.isActive;
 
         this.login = a.login;
         this.password = a.password;
-        this.role_id = a.role;
+        this.roleId = a.role;
     }
 }
