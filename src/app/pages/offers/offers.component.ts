@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Offer} from '../../models/Offer';
 import {OfferService} from '../../services/offerService';
+import {Aim} from '../../models/Aim';
+import {GeoTarget} from '../../models/GeoTarget';
+
+
 
 @Component({
   selector: 'app-offers',
@@ -9,11 +12,31 @@ import {OfferService} from '../../services/offerService';
 })
 export class OffersComponent implements OnInit {
 
-  offerslist : Offer[] = [];
+  displayedColumns = [];
 
-  constructor(offerService : OfferService) { }
+  constructor(public offerService : OfferService) {
+
+  }
+
+
+  setDisplayColumns(){
+
+      this.displayedColumns = [
+          { field: 'Id', header: 'Vin' },
+          { field: 'Name', header: 'Year' },
+          { field: 'Description', header: 'Description' },
+          { field: 'Aims', header: 'Aims' },
+          { field: 'LevelId', header: 'Level Id' },
+          { field: 'MinLevel', header: 'Min Level' },
+          { field: 'startDate', header: 'Start Date' },
+          { field: 'accept_rate', header: 'accept rate' },
+      ];
+  }
+
 
   ngOnInit() {
+    this.setDisplayColumns();
+    this.offerService.loadAllOffers();
   }
 
 }

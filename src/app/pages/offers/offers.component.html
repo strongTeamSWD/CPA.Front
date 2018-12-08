@@ -1,3 +1,16 @@
-<p>
-  offers works!
-</p>
+<p-table [value]="offerService.offerslist">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of displayedColumns">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+    <tr>
+      <td *ngFor="let col of displayedColumns">
+        {{car[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

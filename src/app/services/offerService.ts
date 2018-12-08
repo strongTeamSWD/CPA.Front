@@ -7,6 +7,8 @@ import {HttpResponseTypes} from '../variables/HttpResponseTypes';
 @Injectable()
 export class OfferService {
 
+    offerslist : Offer[] = [];
+
     constructor(private httpService : HttpService)
     {}
 
@@ -18,11 +20,22 @@ export class OfferService {
        return this.httpService.post(SERVER_API_URL.CREATE_OFFER,param,HttpResponseTypes.JSON);
     }
 
-    getAllOffers(){
+    loadAllOffers(){
+        console.log("LOADING OFFERS")
+        this.getAllOffers().toPromise().then(res=>{
+            if(res.body)
+            {
+                this.offerslist = res.body;
+            }
+        }).catch(err=>{console.error(err)});
+    }
+
+
+    private getAllOffers(){
        return this.httpService.get(SERVER_API_URL.GET_ALL_OFFERS);
     }
 
-    getOfferById(id : number){
+    private getOfferById(id : number){
         let param = {
             id : id
         };

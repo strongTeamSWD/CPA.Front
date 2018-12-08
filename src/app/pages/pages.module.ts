@@ -2,15 +2,15 @@ import {NgModule} from '@angular/core';
 import {
     MatButtonModule,
     MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
+    MatCardModule, MatCell,
+    MatCheckboxModule, MatFooterCell, MatHeaderCell,
     MatIconModule,
     MatInputModule,
     MatListModule,
     MatTabsModule,
     MatToolbarModule,
 } from '@angular/material';
-
+import {TableModule} from 'primeng/table';
 import {MatChipsModule} from '@angular/material/chips';
 import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -25,6 +25,9 @@ import {PagesComponent} from './pages.component';
 import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import {CdkTableModule} from '@angular/cdk/table';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
@@ -37,7 +40,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         CommonModule,
         FlexLayoutModule,
         MatButtonModule,
+        MatTableModule,
         MatButtonToggleModule,
+        TableModule,
         MatInputModule,
         MatTabsModule,
         MatToolbarModule,
@@ -57,8 +62,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         PagesComponent,
     ],
     exports: [
+        CdkTableModule,
+        MatHeaderCell,
+        MatFooterCell,
+        MatCell,
     ],
     providers: [
+
         {provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG}
     ]

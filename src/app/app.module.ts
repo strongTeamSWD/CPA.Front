@@ -1,15 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 // import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
-import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {LazyLoadModule} from './lazy-load/lazy-load.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CoreModule} from './core/core.module';
 import {HttpService} from './services/HttpService';
+
 import {
     MatAutocompleteModule,
     MatBadgeModule,
@@ -48,7 +48,6 @@ import {
     MatTreeModule,
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthenticationInterceptor} from './interceptors/AuthenticationInterceptor';
 import {AuthService} from './services/authService';
 import {MenuService} from './services/MenuService';
