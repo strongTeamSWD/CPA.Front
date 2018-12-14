@@ -38,7 +38,7 @@
 
         <ng-container matColumnDef="aims">
             <th mat-header-cell *matHeaderCellDef> aims </th>
-            <td mat-cell *matCellDef="let element"> {{element.aims}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.aims[0].name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="levelId">
@@ -56,9 +56,9 @@
             <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
         </ng-container>
 
-        <!--<ng-container matColumnDef="accept_rate">-->
-            <!--<th mat-header-cell *matHeaderCellDef> accept_rate </th>-->
-            <!--<td mat-cell *matCellDef="let element"> {{element.accept_rate}} </td>-->
+        <!--<ng-container matColumnDef="connect_button">-->
+            <!--<th mat-header-cell *matHeaderCellDef> connect_button </th>-->
+            <!--<td mat-cell *matCellDef="let element"> Connect </td>-->
         <!--</ng-container>-->
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

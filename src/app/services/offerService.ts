@@ -22,8 +22,8 @@ export class OfferService {
             new Aim(2, 1, 'one', 10, 30, 5, 1),];
         let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
             new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
-        this.offerslist = [new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, new Date(), new Date()),
-            new Offer(2, 'two', 'second', aims, geotarget, 1, 1, true, new Date(), new Date())]
+        this.offerslist = [new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, null, new Date()),
+            new Offer(2, 'two', 'second', aims, geotarget, 1, 1, true, null, new Date())]
     }
 
     createOffer(newOffer : Offer){

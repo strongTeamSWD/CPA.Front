@@ -14,32 +14,17 @@ import {Offer} from '../../models/Offer';
 })
 export class OffersComponent implements OnInit {
 
-  displayedColumns = [];
-    ELEMENT_DATA = [];
+  displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate'];
+    dataSource: MatTableDataSource<Offer>;
 
   constructor(public offerService : OfferService) {
-    this.ELEMENT_DATA= this.offerService.offerslist;
-    console.log(this.ELEMENT_DATA);
+      this.dataSource = new MatTableDataSource<Offer>(this.offerService.offerslist);
   }
 
 
-  setDisplayColumns(){
+  setDisplayColumns() {
 
-      // this.displayedColumns = [
-      //     { field: 'id', header: 'Vin' },
-      //     { field: 'name', header: 'Year' },
-      //     { field: 'description', header: 'Description' },
-      //     { field: 'aims', header: 'Aims' },
-      //     { field: 'levelId', header: 'Level Id' },
-      //     { field: 'minLevel', header: 'Min Level' },
-      //     { field: 'startDate', header: 'Start Date' },
-      //     { field: 'accept_rate', header: 'accept rate' },
-      // ];
-      this.displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate'];
   }
-    // <!--'id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'accept_rate'-->
-
-    dataSource = new MatTableDataSource<Offer>(this.ELEMENT_DATA);
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit() {
@@ -50,15 +35,3 @@ export class OffersComponent implements OnInit {
 
 
 }
-// export interface PeriodicElement {
-//     id: number;
-//     name: string;
-//     description: string;
-//     aims: Aim[];
-//     levelID:number;
-//     minLevel: number;
-//     startDate: Date;
-//     accept_rate: number;
-// }
-
-
