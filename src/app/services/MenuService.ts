@@ -66,7 +66,15 @@ export class MenuService {
                     'icon': 'crop_16_9',
                     'chip': false,
                     'open': false,
-                    'active': this.localStorageService.hasCurrentUser()
+                    'active': true//this.localStorageService.hasCurrentUser()
+                },
+                {
+                    'name': 'OFFER DETAIL',
+                    'link': '/offerDetail',
+                    'icon': 'crop_16_9',
+                    'chip': false,
+                    'open': false,
+                    'active': true//this.localStorageService.hasCurrentUser()
                 },
             ]
         },

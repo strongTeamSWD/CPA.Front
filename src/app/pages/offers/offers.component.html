@@ -1,18 +1,69 @@
-<div fxFlex="80%" style="margin: auto" fxLayoutAlign="right">
-    <p-table [value]="offerService.offerslist">
-        <ng-template pTemplate="header">
-            <tr>
-                <th *ngFor="let col of displayedColumns">
-                    {{col.header}}
-                </th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-car>
-            <tr>
-                <td *ngFor="let col of displayedColumns">
-                    {{car[col.field]}}
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+<!--<base href="/">-->
+<!--<div fxFlex="80%" style="margin: auto" fxLayoutAlign="right">-->
+    <!--<p-table [value]="offerService.offerslist">-->
+        <!--<ng-template pTemplate="header">-->
+            <!--<tr>-->
+                <!--<th *ngFor="let col of displayedColumns">-->
+                    <!--{{col.header}}-->
+                <!--</th>-->
+            <!--</tr>-->
+        <!--</ng-template>-->
+        <!--<ng-template pTemplate="body" let-car>-->
+            <!--<tr>-->
+                <!--<td *ngFor="let col of displayedColumns" >-->
+                    <!--{{car[col.field]}}-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</ng-template>-->
+    <!--</p-table>-->
+<!--</div>-->
+
+<!--'id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'accept_rate'-->
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="aims">
+            <th mat-header-cell *matHeaderCellDef> aims </th>
+            <td mat-cell *matCellDef="let element"> {{element.aims}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="levelId">
+            <th mat-header-cell *matHeaderCellDef> levelId </th>
+            <td mat-cell *matCellDef="let element"> {{element.lvelId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="minLevel">
+            <th mat-header-cell *matHeaderCellDef> minLevel </th>
+            <td mat-cell *matCellDef="let element"> {{element.minLevel}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef> startDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="accept_rate">-->
+            <!--<th mat-header-cell *matHeaderCellDef> accept_rate </th>-->
+            <!--<td mat-cell *matCellDef="let element"> {{element.accept_rate}} </td>-->
+        <!--</ng-container>-->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

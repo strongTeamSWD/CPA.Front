@@ -3,10 +3,10 @@ import {
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule, MatCell,
-    MatCheckboxModule, MatFooterCell, MatHeaderCell,
+    MatCheckboxModule, MatDividerModule, MatExpansionModule, MatFooterCell, MatGridListModule, MatHeaderCell,
     MatIconModule,
     MatInputModule,
-    MatListModule,
+    MatListModule, MatPaginatorModule,
     MatTabsModule,
     MatToolbarModule,
 } from '@angular/material';
@@ -19,6 +19,7 @@ import {ContactComponent} from './contact/contact.component';
 import {AboutComponent} from './about/about.component';
 import {ServicesComponent} from './services/services.component';
 import {CoreModule} from '../core/core.module';
+import {OfferComponent} from './offer/offer.component';
 import {OffersComponent} from './offers/offers.component';
 import {PagesComponent} from './pages.component';
 
@@ -27,6 +28,7 @@ import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
+import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -53,13 +55,19 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         PerfectScrollbarModule,
         MatChipsModule,
         CoreModule,
-        PagesRouterModule ],
+        PagesRouterModule,
+        MatPaginatorModule,
+        MatGridListModule,
+        MatDividerModule,
+        MatExpansionModule],
     declarations: [   
         ContactComponent,
         AboutComponent,
         ServicesComponent,
+        OfferComponent,
         OffersComponent,
         PagesComponent,
+        OfferDetailsComponent,
     ],
     exports: [
         CdkTableModule,

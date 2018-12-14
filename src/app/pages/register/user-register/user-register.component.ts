@@ -145,7 +145,6 @@ export class UserRegisterComponent implements OnInit {
             let passwordInput = group.controls[passwordKey],
                 passwordConfirmationInput = group.controls[passwordConfirmationKey];
             if (passwordInput.value !== passwordConfirmationInput.value) {
-                this.formErrors['password2'] += 'AAAAAAAAAAA';
                 return passwordConfirmationInput.setErrors({notEquivalent: true});
             }
             else {
