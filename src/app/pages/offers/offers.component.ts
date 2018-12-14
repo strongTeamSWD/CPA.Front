@@ -37,12 +37,14 @@ export class OffersComponent implements OnInit {
       // ];
       this.displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate'];
   }
+    // <!--'id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'accept_rate'-->
+
     dataSource = new MatTableDataSource<Offer>(this.ELEMENT_DATA);
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit() {
     this.setDisplayColumns();
-    this.offerService.loadAllOffers();
+    // this.offerService.loadAllOffers();
     this.dataSource.paginator = this.paginator;
   }
 

@@ -18,18 +18,38 @@ export class OfferDetailsComponent implements OnInit {
   offer: Offer;
   id: number;
   displayedColumns: string[] = ['aim', 'payment', 'your_level', 'processing', 'postclick', 'accept_rate'];
-  dataSource = ELEMENT_DATA;
+  dataSource : PeriodicElement[] = [];
 
   constructor(public offerService : OfferService) {
       }
 
 
   setDisplayColumns(){
-      let aims = [new Aim(1, 1, 'one', 10, 30, 5, 1),
-          new Aim(2, 1, 'one', 10, 30, 5, 1),];
+      let aims = [new Aim(1, 1, 'one', 10, 30, 70, 1),
+          new Aim(3, 1, 'two', 3, 30, 6, 3),
+          new Aim(2, 1, 'third', 5, 15, 5, 1),
+      ];
       let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
           new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
       this.offer = new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, new Date(), new Date());
+
+      // this.dataSource = [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},];
+
+      for(let aim of this.offer.aims) {
+          // this.dataSource.concat() += [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null}]
+          let data =  {} as PeriodicElement;
+          data.payment = aim.payment;
+          data.aim = aim.name;
+          data.accept_rate = aim.acceptRate;
+          data.postclick = aim.postClickDays;
+          data.processing = aim.processingDays;
+          data.your_level = this.offer.lvelId;
+          console.log('data: ', data);
+          // var temp:PeriodicElement = {payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null};
+          this.dataSource.push(data);
+
+      }
+      // this.dataSource = [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},];
 
       console.log('Offer', this.offer);
   }
@@ -37,7 +57,7 @@ export class OfferDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.setDisplayColumns();
-    this.offer = this.offerService.loadOfferById(this.id);
+    // this.offer = this.offerService.loadOfferById(this.id);
 
   }
 
@@ -48,9 +68,6 @@ export interface PeriodicElement {
     your_level: number;
     processing: number;
     postclick: number;
-    accept_rate: Date
+    accept_rate: number
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-    {payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},
-];
