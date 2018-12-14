@@ -17,14 +17,7 @@ export class OfferService {
 
     constructor(private httpService : HttpService)
     {
-        //offerID : 1, name: "qq", payment: 10, processingDays: 5, postClickDays: 10, acceptRate: 1
-        let aims = [new Aim(1, 1, 'one', 10, 30, 5, 1),
-            new Aim(2, 1, 'one', 10, 30, 5, 1),];
-        let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
-            new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
-        this.offerslist = [new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, null, new Date()),
-            new Offer(2, 'two', 'second', aims, geotarget, 1, 1, true, null, new Date())]
-    }
+        }
 
     createOffer(newOffer : Offer){
         let param = {
@@ -35,24 +28,43 @@ export class OfferService {
     }
 
     loadAllOffers(){
-        console.log("LOADING OFFERS")
-        this.getAllOffers().toPromise().then(res=>{
-            if(res.body)
-            {
-                this.offerslist = res.body;
-            }
-        }).catch(err=>{console.error(err)});
+        // пока что фейк
+        let aims = [new Aim(1, 1, 'one', 10, 30, 5, 1),
+            new Aim(2, 1, 'one', 10, 30, 5, 1),];
+        let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
+            new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
+        this.offerslist = [new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, null, new Date()),
+            new Offer(2, 'two', 'second', aims, geotarget, 1, 1, true, null, new Date())]
+        //потом удалить
+
+        // console.log("LOADING OFFERS")
+        // this.getAllOffers().toPromise().then(res=>{
+        //     if(res.body)
+        //     {
+        //         this.offerslist = res.body;
+        //     }
+        // }).catch(err=>{console.error(err)});
     }
 
     loadOfferById(id: number){
-        console.log("LOADING OFFER BY ID")
-        this.getOfferById(id).toPromise().then(res=>{
-            if(res.body)
-            {
-                return res.body;
+        // пока что фейк
+        this.loadAllOffers();
+        for(let offer of this.offerslist){
+            if(offer.id == id) {
+                return offer;
             }
-        }).catch(err=>{console.error(err)});
+        }
         return null;
+        //потом удалить
+
+        // console.log("LOADING OFFER BY ID")
+        // this.getOfferById(id).toPromise().then(res=>{
+        //     if(res.body)
+        //     {
+        //         return res.body;
+        //     }
+        // }).catch(err=>{console.error(err)});
+        // return null;
     }
 
     private getAllOffers(){

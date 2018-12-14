@@ -59,7 +59,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         MatPaginatorModule,
         MatGridListModule,
         MatDividerModule,
-        MatExpansionModule],
+        MatExpansionModule,],
     declarations: [   
         ContactComponent,
         AboutComponent,

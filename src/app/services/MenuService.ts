@@ -5,7 +5,6 @@ import {SERVER_API_URL} from '../variables/SERVER_API_URL';
 import {AuthDetail} from '../models/AuthDetail';
 import {HttpService} from './HttpService';
 import {User} from '../models/User';
-import {MenuElement} from './menu-element';
 import {LocalStorageService} from './localStorageService';
 
 @Injectable()
@@ -63,14 +62,6 @@ export class MenuService {
                 {
                     'name': 'OFFERS',
                     'link': '/offers',
-                    'icon': 'crop_16_9',
-                    'chip': false,
-                    'open': false,
-                    'active': true//this.localStorageService.hasCurrentUser()
-                },
-                {
-                    'name': 'OFFER DETAIL',
-                    'link': '/offerDetail',
                     'icon': 'crop_16_9',
                     'chip': false,
                     'open': false,

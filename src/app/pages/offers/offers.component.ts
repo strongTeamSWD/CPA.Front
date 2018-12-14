@@ -14,23 +14,22 @@ import {Offer} from '../../models/Offer';
 })
 export class OffersComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate'];
+  displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'connect_button'];
     dataSource: MatTableDataSource<Offer>;
 
   constructor(public offerService : OfferService) {
-      this.dataSource = new MatTableDataSource<Offer>(this.offerService.offerslist);
   }
 
 
-  setDisplayColumns() {
-
+  async setDisplayColumns() {
+      await this.offerService.loadAllOffers();
+      this.dataSource = await new MatTableDataSource<Offer>(this.offerService.offerslist);
+      this.dataSource.paginator = this.paginator;
   }
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngOnInit() {
-    this.setDisplayColumns();
-    // this.offerService.loadAllOffers();
-    this.dataSource.paginator = this.paginator;
+    ngOnInit() {
+      this.setDisplayColumns();
   }
 
 

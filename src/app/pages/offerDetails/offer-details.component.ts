@@ -5,6 +5,7 @@ import {GeoTarget} from '../../models/GeoTarget';
 import {Offer} from '../../models/Offer';
 import {Country} from '../../models/Country';
 import {City} from '../../models/City';
+import {ActivatedRoute} from '@angular/router';
 
 
 
@@ -20,18 +21,21 @@ export class OfferDetailsComponent implements OnInit {
   displayedColumns: string[] = ['aim', 'payment', 'your_level', 'processing', 'postclick', 'accept_rate'];
   dataSource : PeriodicElement[] = [];
 
-  constructor(public offerService : OfferService) {
+  constructor(public offerService : OfferService, private activatedRoute : ActivatedRoute) {
       }
 
 
-  setDisplayColumns(){
-      let aims = [new Aim(1, 1, 'one', 10, 30, 70, 1),
-          new Aim(3, 1, 'two', 3, 30, 6, 3),
-          new Aim(2, 1, 'third', 5, 15, 5, 1),
-      ];
-      let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
-          new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
-      this.offer = new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, new Date(), new Date());
+    async setDisplayColumns(){
+        this.id = await this.activatedRoute.snapshot.params['id'];
+
+        this.offer = await this.offerService.loadOfferById(this.id);
+      //   let aims = [new Aim(1, 1, 'one', 10, 30, 70, 1),
+      //     new Aim(3, 1, 'two', 3, 30, 6, 3),
+      //     new Aim(2, 1, 'third', 5, 15, 5, 1),
+      // ];
+      // let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
+      //     new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
+      // this.offer = new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, new Date(), new Date());
 
       // this.dataSource = [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},];
 
@@ -56,9 +60,7 @@ export class OfferDetailsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.setDisplayColumns();
-    // this.offer = this.offerService.loadOfferById(this.id);
-
+      this.setDisplayColumns();
   }
 
 }
