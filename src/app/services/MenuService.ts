@@ -67,6 +67,20 @@ export class MenuService {
                     'open': false,
                     'active': true//this.localStorageService.hasCurrentUser()
                 },
+                {
+                    'name': 'Statistics',
+                    'open': false,
+                    'link': '/statistic',
+                    'icon': 'grade',
+                    'active': true//this.localStorageService.hasCurrentUser()
+                },
+                {
+                    'name': 'Create offer',
+                    'open': false,
+                    'link': '/newOffer',
+                    'icon': 'grade',
+                    'active': true//this.localStorageService.hasCurrentUser()
+                },
             ]
         },
         {

@@ -5,12 +5,13 @@ import {AboutComponent} from './about/about.component';
 import {ServicesComponent} from './services/services.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
-import {OfferComponent} from './offer/offer.component';
+import {StatisticComponent} from './statistic/statistic.component';
 import {AuthComponent} from '../auth/auth.component';
 import {DashboardCrmComponent} from '../dashboard-crm/dashboard-crm.component';
 import {PagesComponent} from './pages.component';
 import {OffersComponent} from './offers/offers.component';
 import {OfferDetailsComponent} from './offerDetails/offer-details.component';
+import {CreateOfferComponent} from './create-offer/create-offer.component';
 
 const pagesRoutes: Routes = [
     {
@@ -30,7 +31,9 @@ const pagesRoutes: Routes = [
             {path: 'contact', component: ContactComponent,},
             {path: 'about', component: AboutComponent,},
             {path: 'offers', component: OffersComponent,},
-            {path: 'offerDetail/:id', component: OfferDetailsComponent,},]
+            {path: 'offerDetail/:id', component: OfferDetailsComponent,},
+            {path: 'statistic', component: StatisticComponent},
+            {path: 'newOffer', component: CreateOfferComponent}]
     }];
 
 @NgModule({

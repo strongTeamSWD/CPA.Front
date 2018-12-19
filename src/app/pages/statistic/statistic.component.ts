@@ -7,10 +7,10 @@ import {GeoTarget} from '../../models/GeoTarget';
 
 @Component({
   selector: 'app-offer',
-  templateUrl: './offer.component.html',
-  styleUrls: ['./offer.component.scss']
+  templateUrl: './statistic.component.html',
+  styleUrls: ['./statistic.component.scss']
 })
-export class OfferComponent implements OnInit {
+export class StatisticComponent implements OnInit {
 
   displayedColumns = [];
 
