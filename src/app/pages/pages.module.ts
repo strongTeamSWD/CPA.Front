@@ -3,10 +3,10 @@ import {
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule, MatCell,
-    MatCheckboxModule, MatDividerModule, MatExpansionModule, MatFooterCell, MatGridListModule, MatHeaderCell,
+    MatCheckboxModule, MatDatepickerModule, MatDividerModule, MatExpansionModule, MatFooterCell, MatGridListModule, MatHeaderCell,
     MatIconModule,
     MatInputModule,
-    MatListModule, MatPaginatorModule, MatStepperModule,
+    MatListModule, MatPaginatorModule, MatSelectModule, MatStepperModule,
     MatTabsModule,
     MatToolbarModule,
 } from '@angular/material';
@@ -30,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
 import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 import {CreateOfferComponent} from './create-offer/create-offer.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {DetailComponent} from './create-offer/detail/detail.component';
 
 
 
@@ -64,7 +65,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         MatDividerModule,
         MatExpansionModule,
         MatStepperModule,
-        ReactiveFormsModule],
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        FormsModule
+    ],
     declarations: [   
         ContactComponent,
         AboutComponent,
@@ -74,6 +79,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         PagesComponent,
         OfferDetailsComponent,
         CreateOfferComponent,
+        DetailComponent
 
     ],
     exports: [

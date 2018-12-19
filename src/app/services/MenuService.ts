@@ -28,7 +28,7 @@ export class MenuService {
                 // },
                 {
                     'name': 'ABOUT US',
-                    'link': 'material-widgets/list',
+                    'link': '/material-widgets/list',
                     'icon': 'list',
                     'chip': false,
                     'open': false,

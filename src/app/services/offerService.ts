@@ -12,6 +12,9 @@ import {City} from '../models/City';
 export class OfferService {
 
     offerslist : Offer[] = [];
+    aims: Aim[] = [];
+    geotarget: GeoTarget[] = [];
+    index: number = 0;
 
 
 
@@ -20,22 +23,34 @@ export class OfferService {
         }
 
     createOffer(newOffer : Offer){
-        let param = {
-            offer : JSON.stringify(newOffer)
-        };
+        // пока что фейк
+        this.loadAllOffers();
+        this.offerslist.push(newOffer);
 
-       return this.httpService.post(SERVER_API_URL.CREATE_OFFER,param,HttpResponseTypes.JSON);
+        console.log('Offers:', this.offerslist);
+
+
+
+       //  let param = {
+       //      offer : JSON.stringify(newOffer)
+       //  };
+       // return this.httpService.post(SERVER_API_URL.CREATE_OFFER,param,HttpResponseTypes.JSON);
     }
 
     loadAllOffers(){
         // пока что фейк
-        let aims = [new Aim(1, 1, 'one', 10, 30, 5, 1),
-            new Aim(2, 1, 'one', 10, 30, 5, 1),];
-        let geotarget = [new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')),
-            new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana'))]
-        this.offerslist = [new Offer(1, 'one', 'first', aims, geotarget, 1, 1, true, null, new Date()),
-            new Offer(2, 'two', 'second', aims, geotarget, 1, 1, true, null, new Date())]
+        if(this.offerslist.length == 0){
+            this.aims.push(new Aim(1, 1, 'one', 10, 30, 5, 1));
+            this.aims.push(new Aim(2, 1, 'one', 10, 30, 5, 1));
+            this.geotarget.push(new GeoTarget(1, 1, 1, new Country(1, 'Kazakhstan'), new City(1, 'Almaty')));
+            this.geotarget.push(new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana')));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
+        }
         //потом удалить
+
+
+
 
         // console.log("LOADING OFFERS")
         // this.getAllOffers().toPromise().then(res=>{
@@ -56,6 +71,9 @@ export class OfferService {
         }
         return null;
         //потом удалить
+
+
+
 
         // console.log("LOADING OFFER BY ID")
         // this.getOfferById(id).toPromise().then(res=>{

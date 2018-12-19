@@ -1,19 +1,8 @@
-//mat-grid-tile {
-//  background: #DDBDF1//lightblue;
-//}
-table {
-  width:99%;
-  height: 99%;
-}
-          mat-card{
-  width: 99%;
-  height: 99%;
+.example-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-  width: 90px;
-  border-radius: unset;
-  height: 90px;
+.example-container > * {
+  width: 100%;
 }

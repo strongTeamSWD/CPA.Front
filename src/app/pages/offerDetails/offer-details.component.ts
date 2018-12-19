@@ -39,6 +39,7 @@ export class OfferDetailsComponent implements OnInit {
 
       // this.dataSource = [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},];
 
+        console.log('this.offer.aims', this.offer.aims);
       for(let aim of this.offer.aims) {
           // this.dataSource.concat() += [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null}]
           let data =  {} as PeriodicElement;
@@ -48,11 +49,11 @@ export class OfferDetailsComponent implements OnInit {
           data.postclick = aim.postClickDays;
           data.processing = aim.processingDays;
           data.your_level = this.offer.lvelId;
-          // console.log('data: ', data);
+          console.log('data: ', data);
           // var temp:PeriodicElement = {payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null};
           this.dataSource.push(data);
-
       }
+
       // this.dataSource = [{payment: 1, aim: 'Hydrogen', your_level: 1.5, processing: 45, postclick: 30, accept_rate: null},];
 
       // console.log('Offer', this.offer);

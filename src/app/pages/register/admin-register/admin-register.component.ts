@@ -57,7 +57,7 @@ export class AdminRegisterComponent implements OnInit {
                 Validators.maxLength(25)
             ]
             ],
-        },{validator: this.checkIfMatchingPasswords('password', 'password2')});// PasswordValidator.areEqual(this.userForm));
+        },{validator: this.checkIfMatchingPasswords('password', 'password2')});// PasswordValidator.areEqual(this.formGroup));
 
         this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
         this.onValueChanged();

@@ -1,0 +1,118 @@
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Aims
+            </mat-panel-title>
+            <mat-panel-description>
+                Describe your Aims
+                <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <form id="centerForm" fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="formGroup">
+              <!--(ngSubmit)="save()">-->
+            <div class="example-container">
+
+            <mat-form-field  class="full-width">
+                <input matInput placeholder="Aim" id="name"  class="input" formControlName="name" required>
+                <mat-error *ngIf="formErrors.name">{{ formErrors.name }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" placeholder="Payment" id="payment"  class="input" formControlName="payment" required>
+                <mat-error *ngIf="formErrors.payment">{{ formErrors.payment }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" min="1" placeholder="Processing Days" id="processingDays"  class="input" formControlName="processingDays" required>
+                <mat-error *ngIf="formErrors.processingDays">{{ formErrors.processingDays }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" min="1" placeholder="Post Click Days" id="postclickDays"  class="input" formControlName="postclickDays" required>
+                <mat-error *ngIf="formErrors.postclickDays">{{ formErrors.postclickDays }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="number" placeholder="Accept Rate" id="acceptRate"  class="input" formControlName="acceptRate" required>
+                <mat-error *ngIf="formErrors.acceptRate">{{ formErrors.acceptRate }}</mat-error>
+            </mat-form-field>
+
+        <div>
+            <button mat-button (click)="addAim()" [disabled]="!formGroup.valid"><mat-icon>add</mat-icon> Add new Aim</button>
+        </div>
+
+            <ul><li *ngFor="let aim of aims">{{aim.name}}</li></ul>
+        <mat-action-row>
+            <button mat-button color="primary"  type="submit" (click)="nextStepAfterAdd()">Next</button>
+        </mat-action-row>
+            </div>
+        </form>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Destination(GeoTarget)
+            </mat-panel-title>
+            <mat-panel-description>
+                Select the countries and cities
+                <mat-icon>map</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div class="example-container">
+        <mat-form-field>
+        <mat-select placeholder="Geo Targets"[(ngModel)]="geoTargets" [formControl]="toppings" multiple ><!--(focusout)="onOut()"-->
+        <mat-option *ngFor="let geoTarg of geoTargetlist" [value]="geoTarg">{{geoTarg.country.Name}} , {{geoTarg.city.Name}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        </div>
+        <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Time limit
+            </mat-panel-title>
+            <mat-panel-description>
+                Inform the date you wish
+                <mat-icon>date_range</mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" readonly>-->
+        <!--</mat-form-field>-->
+        <!--<mat-datepicker #picker></mat-datepicker>-->
+
+        <div>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Start Date"
+                       [formControl]="serializedStartDate" [(ngModel)]="startDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="Finish Date"
+                       [formControl]="serializedFinishDate" [(ngModel)]="finishDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            </div>
+        <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">End</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+
+</mat-accordion>

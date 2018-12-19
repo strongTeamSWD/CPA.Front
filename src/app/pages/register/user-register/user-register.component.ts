@@ -133,7 +133,7 @@ export class UserRegisterComponent implements OnInit {
             ]
             ],
 
-        }, {validator: this.checkIfMatchingPasswords('password', 'password2')});// PasswordValidator.areEqual(this.userForm));
+        }, {validator: this.checkIfMatchingPasswords('password', 'password2')});// PasswordValidator.areEqual(this.formGroup));
 
         this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
         this.onValueChanged();

@@ -1,22 +1,30 @@
 <div class="mat-elevation-z8">
-    <mat-horizontal-stepper linear #stepper>
-        <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+    <mat-horizontal-stepper linear="false" #stepper>
+        <mat-step [stepControl]="firstFormGroup" errorMessage="Aim is required.">
             <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>Fill out your name</ng-template>
+                <ng-template matStepLabel>Fill out your Aim</ng-template>
+                <div class="example-container">
                 <mat-form-field>
-                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                    <input matInput placeholder="Aim" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
                 </mat-form-field>
+                <mat-form-field>
+                    <input  type="number" min="0"  matInput placeholder="Minumum level" [(ngModel)]="minLevel" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+                <mat-form-field>
+                    <textarea matInput placeholder="Description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></textarea>
+                    <!--formControlName="firstCtrl" required-->
+                </mat-form-field>
+                </div>
                 <div>
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+        <mat-step [stepControl]="secondFormGroup" errorMessage="Detail is required.">
             <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>Fill out your address</ng-template>
-                <mat-form-field>
-                    <input matInput placeholder="Address" formControlName="secondCtrl" required>
-                </mat-form-field>
+                <ng-template matStepLabel>Fill out offer detail</ng-template>
+
+                <app-create-offer-detail (talk)="talkBack($event)"></app-create-offer-detail>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-button matStepperNext>Next</button>
@@ -28,7 +36,8 @@
             You are now done.
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="stepper.reset()">Reset</button>
+                <button mat-button (click)="stepper.reset()">Save</button>
+                <button mat-button (click)="saveOffer()">Reset</button>
             </div>
         </mat-step>
     </mat-horizontal-stepper>
