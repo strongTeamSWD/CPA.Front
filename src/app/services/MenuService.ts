@@ -60,83 +60,64 @@ export class MenuService {
                     'open': false,
                     'active': true
                 },
-                {
-                    'name': 'OFFERS',
-                    'link': '/offers',
-                    'icon': 'crop_16_9',
-                    'chip': false,
-                    'open': false,
-                    'active': true//this.localStorageService.hasCurrentUser()
-                },
-                {
-                    'name': 'Statistics',
-                    'open': false,
-                    'link': '/statistic',
-                    'icon': 'show_chart',//'apps',
-                    'active': true//this.localStorageService.hasCurrentUser()
-                },
-                {
-                    'name': 'Create offer',
-                    'open': false,
-                    'link': '/newOffer',
-                    'icon': 'create',
-                    'active': true//this.localStorageService.hasCurrentUser()
-                },
             ]
         },
         {
-            'name': 'Log out',
-            'link': '/logout',
-            'icon': 'logout',
-            // 'chip': false,
+            'name': 'OFFERS',
+            'link': '/offers',
+            'icon': 'crop_16_9',
+            'chip': false,
             'open': false,
-            'active': true//this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'Log in',
-            'link': '/login',//../register
-            'icon': 'assignment_returned',
-            // 'chip': false,
-            'open': false,
-            'active': true//!this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'Register',
-            'link': '/register',
-            'icon': 'assignment_ind',//'gif',
-            // 'chip': false,
-            'open': false,
-            'active': true//!this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'Summary',
-            'icon': 'apps',
-            'link': '/',
-            'open': false,
-            'active': true//this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'Sources',
-            'icon': 'filter_center_focus',
-            'link': '/tables/responsive',
-            'open': false,
-            'active': true//this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'My Offers-fixed',
-            'open': false,
-            'link': '/tables/fixed',
-            'icon': 'grade',
-            'active': true//this.localStorageService.hasCurrentUser()
-        }, {
-            'name': 'Tools-featured',
-            'open': false,
-            'link': '/tables/featured',
-            'icon': 'grade',
-            'active': true
-        }, {
-            'name': 'Statistics-responsive',
-            'open': false,
-            'link': '/tables/responsive',
-            // material-widgets/icons
-            'icon': 'grade',
             'active': true//this.localStorageService.hasCurrentUser()
         },
+        {
+            'name': 'Statistics',
+            'open': false,
+            'link': '/statistic',
+            'icon': 'show_chart',//'apps',
+            'active': true//this.localStorageService.hasCurrentUser()
+        },
+        {
+            'name': 'Create offer',
+            'open': false,
+            'link': '/newOffer',
+            'icon': 'create',
+            'active': true//this.localStorageService.hasCurrentUser()
+        },
+
+        //  {
+        //     'name': 'Summary',
+        //     'icon': 'apps',
+        //     'link': '/',
+        //     'open': false,
+        //     'active': true//this.localStorageService.hasCurrentUser()
+        // },
+        // {
+        //     'name': 'Sources',
+        //     'icon': 'filter_center_focus',
+        //     'link': '/tables/responsive',
+        //     'open': false,
+        //     'active': true//this.localStorageService.hasCurrentUser()
+        // }, {
+        //     'name': 'My Offers-fixed',
+        //     'open': false,
+        //     'link': '/tables/fixed',
+        //     'icon': 'grade',
+        //     'active': true//this.localStorageService.hasCurrentUser()
+        // }, {
+        //     'name': 'Tools-featured',
+        //     'open': false,
+        //     'link': '/tables/featured',
+        //     'icon': 'grade',
+        //     'active': true
+        // }, {
+        //     'name': 'Statistics-responsive',
+        //     'open': false,
+        //     'link': '/tables/responsive',
+        //     // material-widgets/icons
+        //     'icon': 'grade',
+        //     'active': true//this.localStorageService.hasCurrentUser()
+        // },
 
 
 

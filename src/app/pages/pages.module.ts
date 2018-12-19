@@ -32,6 +32,7 @@ import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 import {CreateOfferComponent} from './create-offer/create-offer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DetailComponent} from './create-offer/detail/detail.component';
+import {ResponsiveTableComponent} from './statistic/responsive-table/responsive-table.component';
 
 
 
@@ -68,7 +69,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ReactiveFormsModule,
         MatSelectModule,
         MatDatepickerModule,
-        FormsModule
+        FormsModule,
     ],
     declarations: [   
         ContactComponent,
@@ -79,7 +80,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         PagesComponent,
         OfferDetailsComponent,
         CreateOfferComponent,
-        DetailComponent
+        DetailComponent,
+        ResponsiveTableComponent
 
     ],
     exports: [

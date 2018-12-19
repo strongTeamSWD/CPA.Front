@@ -19,3 +19,25 @@
 		margin-bottom: 10px;
 	}
 }
+ul.plain, ol.plain {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body #content section.about-us .categories li{
+	//margin-top: 36px;
+	//text-align: center;
+	width: 242px;
+	margin-top: 37px;
+	text-align: center;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+}
+//figure i {
+//	display: block;
+//	width: 171px;
+//	height: 171px;
+//	background: url('/static/v3/img/main-sprite.png');
+//}

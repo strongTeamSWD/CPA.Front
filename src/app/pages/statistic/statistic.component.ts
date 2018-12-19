@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {OfferService} from '../../services/offerService';
 import {Aim} from '../../models/Aim';
 import {GeoTarget} from '../../models/GeoTarget';
+import {FormControl} from '@angular/forms';
+import {OfferFilter} from '../../models/OfferFilter';
+import {MatPaginator} from '@angular/material';
+import {ResponsiveTableHelpers} from './responsive-table/helpers.data';
 
 
 
@@ -12,25 +16,29 @@ import {GeoTarget} from '../../models/GeoTarget';
 })
 export class StatisticComponent implements OnInit {
 
-  displayedColumns = [];
+    filter: OfferFilter = new OfferFilter();
+    serializedFinishDate = new FormControl((new Date()).toISOString());
+    serializedStartDate = new FormControl((new Date()).toISOString());
+    geoTargetlist: GeoTarget[]= [];
 
-  constructor(public offerService : OfferService) {
+    displayedColumns = ['userId', 'userName', 'progress', 'color'];//['id', 'name', 'description', 'type', 'action'];
+    rows: Array<any> = [];
+    showResponsiveTableCode;
 
-  }
+    @ViewChild(MatPaginator) paginator1: MatPaginator;
+    pageLength = 0;
+    pageSize = 15;
+    helpers = ResponsiveTableHelpers;
+
+    constructor(public offerService : OfferService) {
+        this.filter.startDate = new Date();
+        this.filter.finishDate = new Date();
+        this.filter.geoTargets = [];
+    }
 
 
   setDisplayColumns(){
-
-      this.displayedColumns = [
-          { field: 'id', header: 'Vin' },
-          { field: 'name', header: 'Year' },
-          { field: 'description', header: 'Description' },
-          { field: 'aims', header: 'Aims' },
-          { field: 'levelId', header: 'Level Id' },
-          { field: 'minLevel', header: 'Min Level' },
-          { field: 'startDate', header: 'Start Date' },
-          { field: 'accept_rate', header: 'accept rate' },
-      ];
+      this.geoTargetlist = this.offerService.loadAllGeoTargetList()
   }
 
 
@@ -38,5 +46,9 @@ export class StatisticComponent implements OnInit {
     this.setDisplayColumns();
     this.offerService.loadAllOffers();
   }
+
+    applyFilter(){
+        // this.offerService.
+    }
 
 }

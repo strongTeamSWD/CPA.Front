@@ -1,34 +1,33 @@
 <!--&lt;!&ndash;<base href="/">&ndash;&gt;-->
 <!--<div fxFlex="80%" style="margin: auto" fxLayoutAlign="right">-->
-    <!--<p-table [value]="offerService.offerslist">-->
-        <!--<ng-template pTemplate="header">-->
-            <!--<tr>-->
-                <!--<th *ngFor="let col of displayedColumns">-->
-                    <!--{{col.header}}-->
-                <!--</th>-->
-            <!--</tr>-->
-        <!--</ng-template>-->
-        <!--<ng-template pTemplate="body" let-car>-->
-            <!--<tr>-->
-                <!--<td *ngFor="let col of displayedColumns" >-->
-                    <!--{{car[col.field]}}-->
-                <!--</td>-->
-            <!--</tr>-->
-        <!--</ng-template>-->
-    <!--</p-table>-->
+<!--<p-table [value]="offerService.offerslist">-->
+<!--<ng-template pTemplate="header">-->
+<!--<tr>-->
+<!--<th *ngFor="let col of displayedColumns">-->
+<!--{{col.header}}-->
+<!--</th>-->
+<!--</tr>-->
+<!--</ng-template>-->
+<!--<ng-template pTemplate="body" let-car>-->
+<!--<tr>-->
+<!--<td *ngFor="let col of displayedColumns" >-->
+<!--{{car[col.field]}}-->
+<!--</td>-->
+<!--</tr>-->
+<!--</ng-template>-->
+<!--</p-table>-->
 <!--</div>-->
 
 
 <!--&lt;!&ndash;<table mat-table [dataSource]="displayedColumns">&ndash;&gt;-->
 <!--&lt;!&ndash;<ng-container matColumnDef="position">&ndash;&gt;-->
-    <!--&lt;!&ndash;<th mat-header-cell *matHeaderCellDef> No. </th>&ndash;&gt;-->
-    <!--&lt;!&ndash;<td mat-cell *matCellDef="let element"> {{element.position}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;<th mat-header-cell *matHeaderCellDef> No. </th>&ndash;&gt;-->
+<!--&lt;!&ndash;<td mat-cell *matCellDef="let element"> {{element.position}} </td>&ndash;&gt;-->
 <!--&lt;!&ndash;</ng-container>&ndash;&gt;-->
 
 <!--&lt;!&ndash;</table>&ndash;&gt;-->
 
 <!--&lt;!&ndash;<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>&ndash;&gt;-->
-
 
 
 <mat-grid-list cols="4" rowHeight="50%">
@@ -41,21 +40,56 @@
             </mat-card-header>
             Filter
             <mat-card-content>
-                <p>
-
-
-                </p>
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field class="date-full-width">
+                                <input matInput placeholder="Keyword" [(ngModel)]="filter.keyword">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="date-full-width">
+                                <mat-select placeholder="Geo Targets" [(ngModel)]="filter.geoTargets" multiple><!--(focusout)="onOut()"-->
+                                    <mat-option *ngFor="let geoTarg of geoTargetlist" [value]="geoTarg">{{geoTarg.country.Name}} , {{geoTarg.city.Name}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="date-full-width">
+                                <input matInput [matDatepicker]="picker1" placeholder="Period Start Date"
+                                       [formControl]="serializedStartDate" [(ngModel)]="filter.startDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="date-full-width">
+                                <input matInput [matDatepicker]="picker2" placeholder="Period Finish Date"
+                                       [formControl]="serializedFinishDate" [(ngModel)]="filter.finishDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                        </td>
+                        <!--<td>-->
+                            <!--<mat-form-field class="example-full-width">-->
+                                <!--<input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">-->
+                                <!--<mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>-->
+                            <!--</mat-form-field>-->
+                        <!--</td>-->
+                    </tr>
+                </table>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
+                <button mat-button (click)="applyFilter()">Apply</button>
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>
     <mat-grid-tile
             [colspan]=4
             [rowspan]=1>
-
+        <!--<cdk-responsive-table></cdk-responsive-table>-->
     </mat-grid-tile>
 
 </mat-grid-list>

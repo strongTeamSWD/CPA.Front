@@ -23,7 +23,7 @@
 				       <mat-icon>settings</mat-icon>
 				    </button>
       			</mat-list-item>
-      			<mat-list-item>
+      			<mat-list-item class="redirect" [routerLink]="['/material-widgets/list']">
       				<a matLine >Help</a>
 				    <button mat-icon-button>
 				       <mat-icon>help</mat-icon>
@@ -32,7 +32,21 @@
 
       			<mat-divider></mat-divider>
 
-      			<mat-list-item (click)="logout()">
+      			<mat-list-item *ngIf="!this.localStorageService.hasCurrentUser()" class="redirect" [routerLink]="['/register']">
+      				<p matLine >Register</p>
+				    <button mat-icon-button>
+				       <mat-icon>assignment_ind</mat-icon>
+				    </button>
+      			</mat-list-item>
+
+      			<mat-list-item *ngIf="!this.localStorageService.hasCurrentUser()" class="redirect" [routerLink]="['/login']">
+      				<p matLine >Login</p>
+				    <button mat-icon-button>
+				       <mat-icon>assignment_returned</mat-icon>
+				    </button>
+      			</mat-list-item>
+
+      			<mat-list-item  *ngIf="this.localStorageService.hasCurrentUser()" (click)="logout()">
       				<p matLine >Logout</p>
 				    <button mat-icon-button>
 				       <mat-icon>exit_to_app</mat-icon>
