@@ -6,7 +6,7 @@ import {GeoTarget} from '../../models/GeoTarget';
 
 
 @Component({
-  selector: 'app-offer',
+  selector: 'app-statistic',
   templateUrl: './statistic.component.html',
   styleUrls: ['./statistic.component.scss']
 })

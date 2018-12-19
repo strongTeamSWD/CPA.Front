@@ -5,13 +5,13 @@
                 <ng-template matStepLabel>Fill out your Aim</ng-template>
                 <div class="example-container">
                 <mat-form-field>
-                    <input matInput placeholder="Aim" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+                    <input matInput placeholder="Aim" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <input  type="number" min="0"  matInput placeholder="Minumum level" [(ngModel)]="minLevel" [ngModelOptions]="{standalone: true}">
+                    <input  type="number" min="0"  matInput placeholder="Minumum level" [(ngModel)]="minLevel" [ngModelOptions]="{standalone: true}" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <textarea matInput placeholder="Description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></textarea>
+                    <textarea matInput class="description-form" placeholder="Description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" required></textarea>
                     <!--formControlName="firstCtrl" required-->
                 </mat-form-field>
                 </div>
@@ -36,8 +36,8 @@
             You are now done.
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="stepper.reset()">Save</button>
-                <button mat-button (click)="saveOffer()">Reset</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+                <button mat-button (click)="saveOffer()">Save</button>
             </div>
         </mat-step>
     </mat-horizontal-stepper>

@@ -19,8 +19,7 @@ export class MenuService {
             'sub': [
                 // {
                 //     'name': 'ACCOUNT',
-                //     'link': '',
-                //     // material-widgets/buttons
+                //     'link': '/material-widgets/buttons',
                 //     'icon': 'indeterminate_check_box',
                 //     'chip': false,
                 //     'open': false,
@@ -34,10 +33,11 @@ export class MenuService {
                     'open': false,
                     'active': true,
                 },
+                ////////////////////////////////////////////////////
                 // {
                 //
                 //     'name': 'OUR ADS',
-                //     'link': 'material-widgets/stepper',
+                //     'link': '/material-widgets/stepper',
                 //     'icon': 'view_week',
                 //     'chip': false,
                 //     'open': false,
@@ -45,11 +45,12 @@ export class MenuService {
                 // },
                 // {
                 //     'name': 'CLIENTS',
-                //     'link': 'material-widgets/expansion',
+                //     'link': '/material-widgets/expansion',
                 //     'icon': 'web_aaset',
                 //     'chip': false,
                 //     'open': false,
                 // },
+                ////////////////////////////////////////////////////
                 {
                     'name': 'CONTACT US',
                     'link': '',
@@ -71,14 +72,14 @@ export class MenuService {
                     'name': 'Statistics',
                     'open': false,
                     'link': '/statistic',
-                    'icon': 'grade',
+                    'icon': 'show_chart',//'apps',
                     'active': true//this.localStorageService.hasCurrentUser()
                 },
                 {
                     'name': 'Create offer',
                     'open': false,
                     'link': '/newOffer',
-                    'icon': 'grade',
+                    'icon': 'create',
                     'active': true//this.localStorageService.hasCurrentUser()
                 },
             ]
@@ -86,83 +87,56 @@ export class MenuService {
         {
             'name': 'Log out',
             'link': '/logout',
-            'icon': 'gif',
+            'icon': 'logout',
             // 'chip': false,
             'open': false,
-            'active': this.localStorageService.hasCurrentUser()
+            'active': true//this.localStorageService.hasCurrentUser()
         }, {
             'name': 'Log in',
             'link': '/login',//../register
-            'icon': 'gif',
+            'icon': 'assignment_returned',
             // 'chip': false,
             'open': false,
-            'active': !this.localStorageService.hasCurrentUser()
+            'active': true//!this.localStorageService.hasCurrentUser()
         }, {
             'name': 'Register',
             'link': '/register',
-            'icon': 'gif',
+            'icon': 'assignment_ind',//'gif',
             // 'chip': false,
             'open': false,
-            'active': !this.localStorageService.hasCurrentUser()
+            'active': true//!this.localStorageService.hasCurrentUser()
         }, {
             'name': 'Summary',
-            'icon': 'mode_edit',
-            'link': '/auth/scrumboard',
+            'icon': 'apps',
+            'link': '/',
             'open': false,
-            'active': this.localStorageService.hasCurrentUser()
+            'active': true//this.localStorageService.hasCurrentUser()
         }, {
             'name': 'Sources',
             'icon': 'filter_center_focus',
-            'link': 'tables/responsive',
+            'link': '/tables/responsive',
             'open': false,
-            'active': this.localStorageService.hasCurrentUser()
+            'active': true//this.localStorageService.hasCurrentUser()
         }, {
             'name': 'My Offers-fixed',
             'open': false,
-            'link': 'tables/fixed',
+            'link': '/tables/fixed',
             'icon': 'grade',
-            'active': this.localStorageService.hasCurrentUser()
+            'active': true//this.localStorageService.hasCurrentUser()
         }, {
             'name': 'Tools-featured',
             'open': false,
-            'link': 'tables/featured',
+            'link': '/tables/featured',
             'icon': 'grade',
             'active': true
         }, {
             'name': 'Statistics-responsive',
             'open': false,
-            'link': 'tables/responsive',
+            'link': '/tables/responsive',
             // material-widgets/icons
             'icon': 'grade',
-            'active': this.localStorageService.hasCurrentUser()
+            'active': true//this.localStorageService.hasCurrentUser()
         },
-        // {
-        //     'name': 'Promotion',
-        //     'open': false,
-        //     'link': '',
-        //     'icon': 'grade',
-        //     'active': false
-        //
-        // },
-        // {
-        //     'name': 'Referral',
-        //     'open': false,
-        //     'link': '',
-        //     'icon': 'grade',
-        //     'active': true
-        // }, {
-        //     'name': 'Finance',
-        //     'open': false,
-        //     'link': '',
-        //     'icon': 'grade',
-        //     'active': true
-        // }, {
-        //     'name': 'Support',
-        //     'open': false,
-        //     'link': '',
-        //     'icon': 'grade',
-        //     'active': true
-        // },
 
 
 
@@ -175,34 +149,8 @@ export class MenuService {
 
 
 
-        // {
-        //     'name': 'Tables',
-        //     'icon': 'list',
-        //     'link': false,
-        //     'open': false,
-        //     'chip': { 'value': 2, 'color': 'accent' },
-        //     'sub': [
-        //         {
-        //             'name': 'Fixed',
-        //             'icon': 'filter_list',
-        //             'link': 'tables/fixed',
-        //             'open': false,
-        //         },
-        //         {
-        //             'name': 'Feature',
-        //             'icon': 'done_all',
-        //             'link': 'tables/featured',
-        //             'open': false,
-        //         },
-        //         {
-        //             'name': 'Responsive Tables',
-        //             'icon': 'filter_center_focus',
-        //             'link': 'tables/responsive',
-        //             'open': false,
-        //         }
-        //     ]
-        //
-        // },
+
+
         // {
         //     'name': 'Applications',
         //     'icon': 'view_module',
@@ -226,30 +174,6 @@ export class MenuService {
         //             'icon': 'editor',
         //             'link': 'editor/editor',
         //             'open': false,
-        //         }
-        //     ]
-        // }
-        // , {
-        //     'name': 'Pages',
-        //     'icon': 'content_copy',
-        //     'open': false,
-        //     'link': false,
-        //     'sub': [
-        //         {
-        //             'name': 'Login',
-        //             'icon': 'work',
-        //             'open': false,
-        //             'link': '../register',
-        //         }, {
-        //             'name': 'Services',
-        //             'icon': 'local_laundry_service',
-        //             'open': false,
-        //             'link': 'pages/services',
-        //         }, {
-        //             'name': 'Contact',
-        //             'icon': 'directions',
-        //             'open': false,
-        //             'link': 'pages/contact'
         //         }
         //     ]
         // }

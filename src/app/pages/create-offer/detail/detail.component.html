@@ -65,7 +65,7 @@
 
         <div class="example-container">
         <mat-form-field>
-        <mat-select placeholder="Geo Targets"[(ngModel)]="geoTargets" [formControl]="toppings" multiple ><!--(focusout)="onOut()"-->
+        <mat-select placeholder="Geo Targets"[(ngModel)]="geoTargets" [formControl]="toppings" multiple required><!--(focusout)="onOut()"-->
         <mat-option *ngFor="let geoTarg of geoTargetlist" [value]="geoTarg">{{geoTarg.country.Name}} , {{geoTarg.city.Name}}</mat-option>
         </mat-select>
         </mat-form-field>
@@ -92,17 +92,15 @@
         <!--</mat-form-field>-->
         <!--<mat-datepicker #picker></mat-datepicker>-->
 
-        <div>
-            <mat-form-field>
+        <div class="date-form">
+            <mat-form-field class="date-full-width">
                 <input matInput [matDatepicker]="picker1" placeholder="Start Date"
                        [formControl]="serializedStartDate" [(ngModel)]="startDate">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
 
-        </div>
-        <div>
-            <mat-form-field>
+            <mat-form-field class="date-full-width">
                 <input matInput [matDatepicker]="picker2" placeholder="Finish Date"
                        [formControl]="serializedFinishDate" [(ngModel)]="finishDate">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
