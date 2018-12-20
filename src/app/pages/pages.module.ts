@@ -32,7 +32,6 @@ import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 import {CreateOfferComponent} from './create-offer/create-offer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DetailComponent} from './create-offer/detail/detail.component';
-import {ResponsiveTableComponent} from './statistic/responsive-table/responsive-table.component';
 
 
 
@@ -81,7 +80,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         OfferDetailsComponent,
         CreateOfferComponent,
         DetailComponent,
-        ResponsiveTableComponent
 
     ],
     exports: [

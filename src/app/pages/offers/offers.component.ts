@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {OfferService} from '../../services/offerService';
 import {Aim} from '../../models/Aim';
 import {GeoTarget} from '../../models/GeoTarget';
@@ -16,14 +16,15 @@ export class OffersComponent implements OnInit {
 
   displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'connect_button'];
     dataSource: MatTableDataSource<Offer>;
+    @Input()
+    offerslist: Offer[];
 
-  constructor(public offerService : OfferService) {
+  constructor() {
   }
 
 
   async setDisplayColumns() {
-      await this.offerService.loadAllOffers();
-      this.dataSource = await new MatTableDataSource<Offer>(this.offerService.offerslist);
+      this.dataSource = await new MatTableDataSource<Offer>(this.offerslist);
       this.dataSource.paginator = this.paginator;
   }
 

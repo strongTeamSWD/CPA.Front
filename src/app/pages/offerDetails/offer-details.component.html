@@ -1,8 +1,8 @@
-<mat-grid-list cols="4" rows="4">
-    <!--rowHeight="20%"-->
-    <mat-grid-tile
-            [colspan]=3
-            [rowspan]=1>
+<!--<mat-grid-list cols="4" rows="4">-->
+    <!--&lt;!&ndash;rowHeight="20%"&ndash;&gt;-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=3-->
+            <!--[rowspan]=1>-->
         <mat-card>
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
@@ -11,14 +11,16 @@
             </mat-card-header>
         </mat-card>
         <!--<mat-divider></mat-divider>-->
-    </mat-grid-tile>
-    <mat-grid-tile
-            [colspan]=1
-            [rowspan]=4>
-    </mat-grid-tile>
-    <mat-grid-tile
-            [colspan]=3
-            [rowspan]=1>
+
+    <!--</mat-grid-tile>-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=1-->
+            <!--[rowspan]=4>-->
+    <!--</mat-grid-tile>-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=3-->
+            <!--[rowspan]=1>-->
+
         <!--'aim', 'payment', 'your_level', 'processing', 'postclick', 'accept_rate'-->
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="aim">
@@ -54,10 +56,10 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-    </mat-grid-tile>
-    <mat-grid-tile
-            [colspan]=3
-            [rowspan]=2>
+    <!--</mat-grid-tile>-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=3-->
+            <!--[rowspan]=2>-->
 
 
         <mat-card class="example-card">
@@ -94,5 +96,5 @@
                 <!--<button mat-button>SHARE</button>-->
             </mat-card-actions>
         </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+    <!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->

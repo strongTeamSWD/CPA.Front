@@ -85,13 +85,8 @@ export const menus = [
         'link': '/auth/scrumboard',
         'open': false,
         'onlyAuth': true
-    }, {
-        'name': 'Sources',
-        'icon': 'filter_center_focus',
-        'link': 'tables/responsive',
-        'open': false,
-        'onlyAuth': true
-    }, {
+    },
+    {
         'name': 'My Offers-fixed',
         'open': false,
         'link': 'tables/fixed',
@@ -103,13 +98,6 @@ export const menus = [
         'link': 'tables/featured',
         'icon': 'grade',
         'onlyAuth': false
-    }, {
-        'name': 'Statistics-responsive',
-        'open': false,
-        'link': 'tables/responsive',
-        // material-widgets/icons
-        'icon': 'grade',
-        'onlyAuth': true
     },
     // {
     //     'name': 'Promotion',

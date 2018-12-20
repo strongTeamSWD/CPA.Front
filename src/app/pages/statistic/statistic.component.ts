@@ -5,7 +5,6 @@ import {GeoTarget} from '../../models/GeoTarget';
 import {FormControl} from '@angular/forms';
 import {OfferFilter} from '../../models/OfferFilter';
 import {MatPaginator} from '@angular/material';
-import {ResponsiveTableHelpers} from './responsive-table/helpers.data';
 
 
 
@@ -19,26 +18,21 @@ export class StatisticComponent implements OnInit {
     filter: OfferFilter = new OfferFilter();
     serializedFinishDate = new FormControl((new Date()).toISOString());
     serializedStartDate = new FormControl((new Date()).toISOString());
-    geoTargetlist: GeoTarget[]= [];
-
-    displayedColumns = ['userId', 'userName', 'progress', 'color'];//['id', 'name', 'description', 'type', 'action'];
-    rows: Array<any> = [];
-    showResponsiveTableCode;
-
-    @ViewChild(MatPaginator) paginator1: MatPaginator;
-    pageLength = 0;
-    pageSize = 15;
-    helpers = ResponsiveTableHelpers;
+    geoTargetlist: GeoTarget[] = [];
+    aimList: string[] = [];
 
     constructor(public offerService : OfferService) {
         this.filter.startDate = new Date();
         this.filter.finishDate = new Date();
         this.filter.geoTargets = [];
+        this.filter.aimList = [];
     }
 
 
   setDisplayColumns(){
-      this.geoTargetlist = this.offerService.loadAllGeoTargetList()
+      this.offerService.loadAllOffers();
+      this.geoTargetlist = this.offerService.loadAllGeoTargetList();
+      this.aimList = this.offerService.loadAllAimList();
   }
 
 

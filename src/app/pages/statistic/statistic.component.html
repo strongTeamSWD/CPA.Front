@@ -30,17 +30,18 @@
 <!--&lt;!&ndash;<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>&ndash;&gt;-->
 
 
-<mat-grid-list cols="4" rowHeight="50%">
-    <mat-grid-tile
-            [colspan]=4
-            [rowspan]=1>
+<!--<mat-grid-list cols="4" rows="3" rowHeight="35%">-->
+    <!--&lt;!&ndash;rowHeight="30%"&ndash;&gt;-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=4-->
+            <!--[rowspan]=1>-->
         <mat-card class="example-card">
             <mat-card-header>
                 <h3>Offer</h3>
             </mat-card-header>
             Filter
             <mat-card-content>
-                <table class="example-full-width" cellspacing="0">
+                <table class="date-full-width" cellspacing="0">
                     <tr>
                         <td>
                             <mat-form-field class="date-full-width">
@@ -49,8 +50,11 @@
                         </td>
                         <td>
                             <mat-form-field class="date-full-width">
-                                <mat-select placeholder="Geo Targets" [(ngModel)]="filter.geoTargets" multiple><!--(focusout)="onOut()"-->
-                                    <mat-option *ngFor="let geoTarg of geoTargetlist" [value]="geoTarg">{{geoTarg.country.Name}} , {{geoTarg.city.Name}}</mat-option>
+                                <mat-select placeholder="Geo Targets" [(ngModel)]="filter.geoTargets" multiple>
+                                    <!--(focusout)="onOut()"-->
+                                    <mat-option *ngFor="let geoTarg of geoTargetlist" [value]="geoTarg">
+                                        {{geoTarg.country.Name}} , {{geoTarg.city.Name}}
+                                    </mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
@@ -73,23 +77,35 @@
                             </mat-form-field>
                         </td>
                         <!--<td>-->
-                            <!--<mat-form-field class="example-full-width">-->
-                                <!--<input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">-->
-                                <!--<mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>-->
-                            <!--</mat-form-field>-->
+                        <!--<mat-form-field class="date-full-width">-->
+                        <!--<input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">-->
+                        <!--<mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>-->
+                        <!--</mat-form-field>-->
                         <!--</td>-->
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="date-full-width">
+                                <mat-select placeholder="Aims" [(ngModel)]="filter.aimList" multiple>
+                                    <!--(focusout)="onOut()"-->
+                                    <mat-option *ngFor="let aim of aimList" [value]="aim">{{aim}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <button  class="date-full-width" mat-button (click)="applyFilter()">Apply</button>
+                        </td>
                     </tr>
                 </table>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button (click)="applyFilter()">Apply</button>
+                <!--<button mat-button (click)="applyFilter()">Apply</button>-->
             </mat-card-actions>
         </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile
-            [colspan]=4
-            [rowspan]=1>
-        <!--<cdk-responsive-table></cdk-responsive-table>-->
-    </mat-grid-tile>
-
-</mat-grid-list>
+    <!--</mat-grid-tile>-->
+    <!--<mat-grid-tile-->
+            <!--[colspan]=4-->
+            <!--[rowspan]=3>-->
+        <app-offers [offerList] ="offerService.offerslist"></app-offers>
+    <!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->
