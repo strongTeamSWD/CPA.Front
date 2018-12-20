@@ -15,7 +15,10 @@
             <div class="example-container">
 
             <mat-form-field  class="full-width">
-                <input matInput placeholder="Aim" id="name"  class="input" formControlName="name" required>
+                <!--<input matInput placeholder="Aim" id="name"  class="input" formControlName="name" required>-->
+                <mat-select placeholder="Aim" id="name"   class="input"   formControlName="name"  required><!--(focusout)="onOut()"-->
+                    <mat-option *ngFor="let aim of aimList" [value]="aim">{{aim}}</mat-option>
+                </mat-select>
                 <mat-error *ngIf="formErrors.name">{{ formErrors.name }}</mat-error>
             </mat-form-field>
 

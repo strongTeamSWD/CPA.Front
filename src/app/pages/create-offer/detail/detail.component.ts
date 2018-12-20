@@ -20,6 +20,7 @@ export class DetailComponent implements OnInit {
     step = 0;
     aims: Aim[] = [];
     geoTargetlist: GeoTarget[]= [];
+    aimList: string[] = [];
     geoTargets: GeoTarget[]= [];
     startDate= new Date();
     finishDate= new Date();
@@ -85,7 +86,9 @@ export class DetailComponent implements OnInit {
 
 
     async setDisplayColumns() {
-        this.geoTargetlist = this.offerService.loadAllGeoTargetList()
+        this.geoTargetlist = this.offerService.loadAllGeoTargetList();
+        this.aimList = this.offerService.loadAllAimList();
+
     }
 
     buildForm() {
