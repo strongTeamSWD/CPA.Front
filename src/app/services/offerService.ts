@@ -7,16 +7,18 @@ import {Aim} from '../models/Aim';
 import {GeoTarget} from '../models/GeoTarget';
 import {Country} from '../models/Country';
 import {City} from '../models/City';
+import {AcceptOffer} from '../models/AcceptOffer';
 
 @Injectable()
 export class OfferService {
 
-    offerslist : Offer[] = [];
+    offerslist: Offer[] = [];
     aims: Aim[] = [];
     geotarget: GeoTarget[] = [];
     index: number = 0;
     geoTargetList: GeoTarget[] = [];
     aimList: string[] = [];
+    acceptOfferList:AcceptOffer[] = [];
 
 
 
@@ -39,6 +41,19 @@ export class OfferService {
        // return this.httpService.post(SERVER_API_URL.CREATE_OFFER,param,HttpResponseTypes.JSON);
     }
 
+    loadAllAcceptOffers(){
+        if(this.acceptOfferList.length == 0) {
+            this.acceptOfferList.push(new AcceptOffer(1, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(2, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(3, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(4, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(5, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(6, 'ASAAAA', 'JAck'));
+            this.acceptOfferList.push(new AcceptOffer(7, 'ASAAAA', 'JAck'));
+        }
+        return this.acceptOfferList;
+    }
+
     loadAllOffers(){
         // пока что фейк
         if(this.offerslist.length == 0){
@@ -48,17 +63,17 @@ export class OfferService {
             this.geotarget.push(new GeoTarget(2, 1, 2, new Country(1, 'Kazakhstan'), new City(2, 'Astana')));
             this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
-        this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
+            this.offerslist.push(new Offer(this.index++, 'one', 'first',  this.aims, this.geotarget, 1, 1, true, null, new Date()));
             this.offerslist.push(new Offer(this.index++, 'two', 'second', this.aims, this.geotarget, 1, 1, true, null, new Date()));
         }
         //потом удалить

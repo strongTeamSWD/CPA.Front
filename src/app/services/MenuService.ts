@@ -84,6 +84,20 @@ export class MenuService {
             'icon': 'create',
             'active': true//this.localStorageService.hasCurrentUser()
         },
+        {
+            'name': 'Profile',
+            'open': false,
+            'link': '/profile',
+            'icon': 'create',
+            'active': true//this.localStorageService.hasCurrentUser()
+        },
+        {
+            'name': 'AcceptOffers',
+            'open': false,
+            'link': '/acceptOffers',
+            'icon': 'create',
+            'active': true//this.localStorageService.hasCurrentUser()
+        },
 
         //  {
         //     'name': 'Summary',

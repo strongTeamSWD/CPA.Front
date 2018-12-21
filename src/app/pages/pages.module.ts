@@ -32,6 +32,8 @@ import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 import {CreateOfferComponent} from './create-offer/create-offer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DetailComponent} from './create-offer/detail/detail.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {AcceptOffersComponent} from './accept-offers/accept-offers.component';
 
 
 
@@ -80,7 +82,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         OfferDetailsComponent,
         CreateOfferComponent,
         DetailComponent,
-
+        UserProfileComponent,
+        AcceptOffersComponent
     ],
     exports: [
         CdkTableModule,

@@ -12,6 +12,8 @@ import {PagesComponent} from './pages.component';
 import {OffersComponent} from './offers/offers.component';
 import {OfferDetailsComponent} from './offerDetails/offer-details.component';
 import {CreateOfferComponent} from './create-offer/create-offer.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {AcceptOffersComponent} from './accept-offers/accept-offers.component';
 
 const pagesRoutes: Routes = [
     {
@@ -33,7 +35,9 @@ const pagesRoutes: Routes = [
             {path: 'offers', component: OffersComponent,},
             {path: 'offerDetail/:id', component: OfferDetailsComponent,},
             {path: 'statistic', component: StatisticComponent},
-            {path: 'newOffer', component: CreateOfferComponent}]
+            {path: 'newOffer', component: CreateOfferComponent},
+            {path: 'profile', component: UserProfileComponent},
+            {path: 'acceptOffers', component: AcceptOffersComponent}],
     }];
 
 @NgModule({

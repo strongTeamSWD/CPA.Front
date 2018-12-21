@@ -4,27 +4,28 @@ import {Aim} from '../../models/Aim';
 import {GeoTarget} from '../../models/GeoTarget';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {Offer} from '../../models/Offer';
+import {AcceptOffer} from '../../models/AcceptOffer';
 
 
 
 @Component({
-  selector: 'app-offers',
-  templateUrl: './offers.component.html',
-  styleUrls: ['./offers.component.scss']
+  selector: 'app-accept-offers',
+  templateUrl: './accept-offers.component.html',
+  styleUrls: ['./accept-offers.component.scss']
 })
-export class OffersComponent implements OnInit {
+export class AcceptOffersComponent implements OnInit {
 
-  displayedColumns = ['id', 'name', 'description', 'aims', 'levelId', 'minLevel', 'startDate', 'connect_button'];
-    dataSource: MatTableDataSource<Offer>;
-    // @Input()
-    offerslist: Offer[];
+
+  displayedColumns = ['id', 'name', 'web-master-name', 'connect_button'];
+    dataSource: MatTableDataSource<AcceptOffer>;
+    acceptOffers: AcceptOffer[];
 
   constructor(public offerService : OfferService) {
   }
 
 
   async setDisplayColumns() {
-      this.dataSource = await new MatTableDataSource<Offer>(this.offerService.offerslist);
+      this.dataSource = new MatTableDataSource<AcceptOffer>(this.offerService.loadAllAcceptOffers());
       this.dataSource.paginator = this.paginator;
   }
 
