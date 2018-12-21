@@ -18,13 +18,13 @@
         <ng-container matColumnDef="connect_button">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let element">
-                <a class="redirect">
+                <a class="redirect"  [routerLink]="['/']">
                     <button mat-button>
                         <mat-icon>done</mat-icon>
                         Accept
                     </button>
                 </a>
-                <a class="redirect">
+                <a class="redirect" [routerLink]="['/']">
                     <button mat-button>
                         <mat-icon>highlight_off</mat-icon>
                         Decline
